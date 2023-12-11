@@ -1,0 +1,80 @@
+import random
+import time
+import traceback
+from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.firefox.options import Options
+
+from user_agents import UserAgents
+from android_user_agents import UserAgentManager
+
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+
+from selenium import webdriver
+from links import LinkManager
+
+siteLinkMain = "https://www.google.com/search?client=firefox-b-d&q=my+user+agent"
+
+
+def loop():
+    try:
+        run_browser()
+    except:
+        loop()
+
+
+def run_browser():
+    global custom_ua, browser
+    try:
+
+        print("=====session start=====")
+        numb = random.choice([0, 1])
+        print("Selected Choice: " + str(numb))
+        if numb == 0:
+            custom_ua = UserAgentManager().get_phone_user_agent()
+            print("Using Android Mobile: " + custom_ua)
+        else:
+            custom_ua = UserAgents().get_user_agent()
+            print("Using PC / iOS: " + custom_ua)
+
+        options = webdriver.FirefoxOptions()
+        options.add_argument(f"user-agent={custom_ua}")
+        options.set_preference("general.useragent.override", custom_ua)
+        browser = webdriver.Firefox(options=options)
+
+        actions = ActionChains(browser)
+        browser.set_window_size(random.randint(500, 2000), random.randint(400, 1080))
+        browser.get(LinkManager().get_link())
+
+        print("> Wait 5 seconds")
+        time.sleep(5)
+        print("> Done")
+
+        print("Current Page: " + browser.title)
+
+        print("Going for popunder")
+        x = str(random.randint(0, 450))
+        y = str(random.randint(0, 450))
+        browser.execute_script("window.scrollBy(" + x + ", " + y + ");")
+
+        actions.move_by_offset(random.randint(0, 290), random.randint(0, 290))
+        actions.click()
+        actions.perform()
+
+        time.sleep(random.randint(25, 35))
+        browser.quit()
+        print("====End Session====")
+        time.sleep(2)
+        run_browser()
+
+    except Exception as e:
+        print("Error occurred. Retrying")
+        traceback.print_exc()
+        browser.quit()
+        time.sleep(2)
+        run_browser()
+
+
+run_browser()
