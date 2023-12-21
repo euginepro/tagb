@@ -2,6 +2,8 @@ import random
 import time
 import traceback
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.edge.service import Service as EdgeService
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.edge.options import Options
@@ -20,7 +22,8 @@ siteLinkMain = "https://hub.euginetech.com/"
 
 def loop():
     try:
-        run_browser()
+        while True:
+            run_browser()
     except:
         loop()
 
@@ -41,10 +44,11 @@ def run_browser():
 
         chrome_options = Options()
         chrome_options.add_argument(f"user-agent={custom_ua}")
-        browser = webdriver.ChromiumEdge(options=chrome_options)
+        browser = webdriver.ChromiumEdge(service=EdgeService(EdgeChromiumDriverManager().install()),
+                                         options=chrome_options)
 
         actions = ActionChains(browser)
-        browser.set_window_size(random.randint(500, 2000), random.randint(400, 1080))
+        browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
         browser.get(LinkManager().get_link())
 
         print("> Wait 5 seconds")
@@ -58,22 +62,19 @@ def run_browser():
         y = str(random.randint(0, 450))
         browser.execute_script("window.scrollBy(" + x + ", " + y + ");")
 
-        actions.move_by_offset(random.randint(0, 290), random.randint(0, 290))
+        actions.move_by_offset(random.randint(0, 400), random.randint(0, 290))
         actions.click()
         actions.perform()
 
-        time.sleep(random.randint(25, 35))
+        time.sleep(random.randint(25, 240))
         browser.quit()
         print("====End Session====")
-        time.sleep(2)
-        run_browser()
+        time.sleep(random.randint(2, 10))
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
         browser.quit()
-        time.sleep(2)
-        run_browser()
 
 
-run_browser()
+loop()

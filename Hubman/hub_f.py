@@ -14,13 +14,16 @@ from selenium.webdriver.common.by import By
 
 from selenium import webdriver
 from links import LinkManager
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 
 siteLinkMain = "https://www.google.com/search?client=firefox-b-d&q=my+user+agent"
 
 
 def loop():
     try:
-        run_browser()
+        while True:
+            run_browser()
     except:
         loop()
 
@@ -42,10 +45,10 @@ def run_browser():
         options = webdriver.FirefoxOptions()
         options.add_argument(f"user-agent={custom_ua}")
         options.set_preference("general.useragent.override", custom_ua)
-        browser = webdriver.Firefox(options=options)
+        browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
 
         actions = ActionChains(browser)
-        browser.set_window_size(random.randint(500, 2000), random.randint(400, 1080))
+        browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
         browser.get(LinkManager().get_link())
 
         print("> Wait 5 seconds")
@@ -63,18 +66,16 @@ def run_browser():
         actions.click()
         actions.perform()
 
-        time.sleep(random.randint(25, 35))
+        time.sleep(random.randint(25, 120))
         browser.quit()
         print("====End Session====")
-        time.sleep(2)
-        run_browser()
+        time.sleep(random.randint(2, 10))
+
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
         browser.quit()
-        time.sleep(2)
-        run_browser()
 
 
-run_browser()
+loop()

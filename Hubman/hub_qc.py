@@ -2,9 +2,10 @@ import random
 import time
 import traceback
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 from user_agents import UserAgents
 from android_user_agents import UserAgentManager
@@ -20,7 +21,8 @@ siteLinkMain = "https://hub.euginetech.com/"
 
 def loop():
     try:
-        run_browser()
+        while True:
+            run_browser()
     except:
         loop()
 
@@ -41,10 +43,10 @@ def run_browser():
 
         chrome_options = Options()
         chrome_options.add_argument(f"user-agent={custom_ua}")
-        browser = webdriver.Chrome(options=chrome_options)
+        browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 
         actions = ActionChains(browser)
-        browser.set_window_size(random.randint(500, 2000), random.randint(400, 1080))
+        browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
         browser.get(LinkManager().get_link())
 
         print("> Wait 5 seconds")
@@ -62,18 +64,15 @@ def run_browser():
         actions.click()
         actions.perform()
 
-        time.sleep(random.randint(25, 35))
+        time.sleep(random.randint(25, 120))
         browser.quit()
         print("====End Session====")
-        time.sleep(2)
-        run_browser()
+        time.sleep(random.randint(2, 10))
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
         browser.quit()
-        time.sleep(2)
-        run_browser()
 
 
-run_browser()
+loop()
