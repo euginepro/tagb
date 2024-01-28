@@ -83,5 +83,4 @@ class UserAgents:
         self.rand_ua = random.choice(all_ua)
         return self.rand_ua
 
-
 # print(UserAgents().get_user_agent())

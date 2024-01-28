@@ -10,7 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from user_agents import UserAgents
 from android_user_agents import UserAgentManager
 
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
 from selenium import webdriver
@@ -55,12 +55,22 @@ def run_browser():
 
         print("Current Page: " + browser.title)
 
-        print("Going for popunder")
-        x = str(random.randint(0, 450))
-        y = str(random.randint(0, 450))
-        browser.execute_script("window.scrollBy(" + x + ", " + y + ");")
+        body = browser.find_element(By.TAG_NAME, "body")
+        bottom_reached = False
+        while not bottom_reached:
+            if not browser.execute_script("return (window.innerHeight + window.scrollY) >= document.body.scrollHeight"):
+                body.send_keys(Keys.PAGE_DOWN)
+                time.sleep(random.randint(4, 7))
+            else:
+                body.send_keys(Keys.HOME)
+                bottom_reached = True
 
-        actions.move_by_offset(random.randint(0, 290), random.randint(0, 290))
+        print("Going for click")
+        '''x = str(random.randint(0, 450))
+        y = str(random.randint(0, 450))
+        browser.execute_script("window.scrollBy(" + x + ", " + y + ");")'''
+
+        actions.move_by_offset(random.randint(5, 20), random.randint(3, 20))
         actions.click()
         actions.perform()
 

@@ -1,1 +1,1 @@
-python hub_qc.py
+python blair.py
