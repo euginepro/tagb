@@ -8,8 +8,8 @@ class InsuranceLinks:
                       "https://www.coverhound.com", "https://www.gabi.com", "https://www.quotesmatch.com",
                       "https://www.smartfinancial.com", "https://www.netquote.com",
                       "https://www.einsurance.com", "https://www.compare.com",
-                      "https://www.carinsurance.com", "https://www.iselect.com.au", "https://www.confused.com",
-                      "https://www.insurancehotline.com", "https://www.kanetix.ca"]
+                      "https://www.carinsurance.com", "https://www.iselect.com.au",
+                      "https://www.insurancehotline.com", "https://rates.ca/"]
 
     def get_link(self):
         return random.choice(self.links)

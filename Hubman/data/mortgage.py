@@ -11,7 +11,7 @@ class MortgageLinks:
                       "https://www.navyfederal.org/loans-cards/mortgage", "https://www.rocketmortgage.com",
                       "https://www.realtor.com/mortgage", "https://www.suntrust.com/home-mortgages",
                       "https://www.mortgagecalculator.org", "https://www.fanniemae.com/singlefamily/mortgage",
-                      "https://www.freddiemac.com/pmms", "https://www.mortgagecalculator.net",
+                      "https://www.mortgagecalculator.net",
                       "https://www.nerdwallet.com/mortgages"]
 
     def get_link(self):

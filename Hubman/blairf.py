@@ -2,11 +2,10 @@ import random
 import time
 import traceback
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service as ChromeService
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.chrome import ChromeDriverManager
 
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
@@ -31,14 +30,26 @@ def loop():
 
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
-    """Using CTR 6%"""
-    ctr = 8
+    """Using CTR 8%"""
+    ctr = 100
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         actions.move_by_offset(10, 20)
         actions.click()
         actions.perform()
         print("Ad Clicked")
+        print("\nwaiting page load before scroll\n")
+        time.sleep(random.randint(10, 15))
+        actions.send_keys(Keys.PAGE_DOWN).perform()
+        print("scrolled\n")
+        time.sleep(random.randint(1, 6))
+        actions.send_keys(Keys.PAGE_DOWN).perform()
+        wait = random.randint(15, 45)
+        print("waiting: " + str(wait))
+        time.sleep(wait)
+        m_browser.quit()
+        print("====End Session====")
+        time.sleep(random.randint(2, 5))
     else:
         print("Not to click this round")
         wait = random.randint(25, 60)
@@ -51,26 +62,12 @@ def click_ad(m_browser):
     print("Session Ended")
 
 
-def visit_site_direct():
+def visit_site_direct(d_browser):
     print("Direct Visit")
-    global custom_ua, browser
     try:
-        print("=====session start=====")
-        numb = random.choice([0, 1])
-        print("Selected Choice: " + str(numb))
-        if numb == 0:
-            custom_ua = UserAgentManager().get_phone_user_agent()
-            print("Using Android Mobile: " + custom_ua)
-        else:
-            custom_ua = UserAgents().get_user_agent()
-            print("Using PC / iOS: " + custom_ua)
+        print("=====session start ..direct visit=====")
 
-        options = webdriver.FirefoxOptions()
-        options.add_argument(f"user-agent={custom_ua}")
-        options.set_preference("general.useragent.override", custom_ua)
-        browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
-        browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
-        browser.get(LinkManager().get_link())
+        d_browser.get(LinkManager().get_link())
         print("waiting 5s")
         time.sleep(5)
 
@@ -82,54 +79,41 @@ def visit_site_direct():
             time between 30s and 3m"""
             page_finished = False
             while not page_finished:
-                if not browser.execute_script(
+                if not d_browser.execute_script(
                         "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
                     print("Still Scrolling")
 
-                    ActionChains(browser).send_keys(Keys.PAGE_DOWN).perform()
-                    sleep_time = random.randint(5, 10)
+                    ActionChains(d_browser).send_keys(Keys.PAGE_DOWN).perform()
+                    sleep_time = random.randint(5, 30)
                     print("Waiting " + str(sleep_time) + " Seconds after page down")
                     time.sleep(sleep_time)
                 else:
                     page_finished = True
                     print("Scrolled To Bottom")
             """Scroll Back to top"""
-            ActionChains(browser).send_keys(Keys.HOME).perform()
-            click_ad(browser)
+            ActionChains(d_browser).send_keys(Keys.HOME).perform()
+            print("waiting 2 to 8 seconds")
+            time.sleep(random.randint(2, 8))
+            click_ad(d_browser)
         except Exception as e:
             print("Error occurred. Retrying")
             traceback.print_exc()
-            browser.quit()
+            d_browser.quit()
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
-        browser.quit()
+        d_browser.quit()
 
 
-def visit_site_with_google():
+def visit_site_with_google(g_browser):
     print("Doing Google Search")
     print("Direct Visit --- Other site")
-    global custom_ua, browser
     try:
-        print("=====session start=====")
-        numb = random.choice([0, 1])
-        print("Selected Choice: " + str(numb))
-        if numb == 0:
-            custom_ua = UserAgentManager().get_phone_user_agent()
-            print("Using Android Mobile: " + custom_ua)
-        else:
-            custom_ua = UserAgents().get_user_agent()
-            print("Using PC / iOS: " + custom_ua)
-
-        options = webdriver.FirefoxOptions()
-        options.add_argument(f"user-agent={custom_ua}")
-        options.set_preference("general.useragent.override", custom_ua)
-        browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
-        browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
+        print("=====session start ... google search=====")
 
         search_url = Router().get_search_link()
-        browser.get(search_url)
+        g_browser.get(search_url)
 
         print("waiting 5s")
         time.sleep(5)
@@ -142,11 +126,11 @@ def visit_site_with_google():
             time between 30s and 3m"""
             page_finished = False
             while not page_finished:
-                if not browser.execute_script(
+                if not g_browser.execute_script(
                         "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
                     print("Still Scrolling")
 
-                    ActionChains(browser).send_keys(Keys.PAGE_DOWN).perform()
+                    ActionChains(g_browser).send_keys(Keys.PAGE_DOWN).perform()
                     sleep_time = random.randint(5, 10)
                     print("Waiting " + str(sleep_time) + " Seconds after page down")
                     time.sleep(sleep_time)
@@ -154,42 +138,27 @@ def visit_site_with_google():
                     page_finished = True
                     print("Scrolled To Bottom")
             """Page Up"""
-            ActionChains(browser).send_keys(Keys.PAGE_UP).perform()
-            ActionChains(browser).send_keys(Keys.PAGE_UP).perform()
-            visit_other_site_direct()
+            ActionChains(g_browser).send_keys(Keys.PAGE_UP).perform()
+            ActionChains(g_browser).send_keys(Keys.PAGE_UP).perform()
+            visit_other_site_direct(g_browser)
 
         except Exception as e:
             print("Error occurred. Retrying")
             traceback.print_exc()
-            browser.quit()
+            g_browser.quit()
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
-        browser.quit()
+        g_browser.quit()
 
 
-def visit_other_site_direct():
+def visit_other_site_direct(o_browser):
     print("Direct Visit --- Other site")
-    global custom_ua, browser
     try:
         print("=====session start=====")
-        numb = random.choice([0, 1])
-        print("Selected Choice: " + str(numb))
-        if numb == 0:
-            custom_ua = UserAgentManager().get_phone_user_agent()
-            print("Using Android Mobile: " + custom_ua)
-        else:
-            custom_ua = UserAgents().get_user_agent()
-            print("Using PC / iOS: " + custom_ua)
 
-        options = webdriver.FirefoxOptions()
-        options.add_argument(f"user-agent={custom_ua}")
-        options.set_preference("general.useragent.override", custom_ua)
-        browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
-        browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
-
-        browser.get(Rand().get_other_site_link())
+        o_browser.get(Rand().get_other_site_link())
 
         print("waiting 5s")
         time.sleep(5)
@@ -202,11 +171,11 @@ def visit_other_site_direct():
             time between 30s and 3m"""
             page_finished = False
             while not page_finished:
-                if not browser.execute_script(
+                if not o_browser.execute_script(
                         "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
                     print("Still Scrolling")
 
-                    ActionChains(browser).send_keys(Keys.PAGE_DOWN).perform()
+                    ActionChains(o_browser).send_keys(Keys.PAGE_DOWN).perform()
                     sleep_time = random.randint(5, 10)
                     print("Waiting " + str(sleep_time) + " Seconds after page down")
                     time.sleep(sleep_time)
@@ -214,22 +183,37 @@ def visit_other_site_direct():
                     page_finished = True
                     print("Scrolled To Bottom")
             """Page Up"""
-            ActionChains(browser).send_keys(Keys.PAGE_UP).perform()
-            ActionChains(browser).send_keys(Keys.PAGE_UP).perform()
-            visit_site_direct()
+            ActionChains(o_browser).send_keys(Keys.PAGE_UP).perform()
+            ActionChains(o_browser).send_keys(Keys.PAGE_UP).perform()
+            visit_site_direct(o_browser)
 
         except Exception as e:
             print("Error occurred. Retrying")
             traceback.print_exc()
-            browser.quit()
+            o_browser.quit()
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
-        browser.quit()
+        o_browser.quit()
 
 
 def run_browser():
+    numb = random.choice([0, 1])
+    print("Selected Choice: " + str(numb))
+    if numb == 0:
+        custom_ua = UserAgentManager().get_phone_user_agent()
+        print("Using Android Mobile: " + custom_ua)
+    else:
+        custom_ua = UserAgents().get_user_agent()
+        print("Using PC / iOS: " + custom_ua)
+
+    options = webdriver.FirefoxOptions()
+    options.add_argument(f"user-agent={custom_ua}")
+    options.set_preference("general.useragent.override", custom_ua)
+    browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+
+    browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
     try:
         # choice to visit other site
         random_num = random.randint(1, 5)
@@ -238,13 +222,13 @@ def run_browser():
             print("Visiting other site")
             google_random = random.randint(1, 4)
             if google_random <= 4:
-                visit_site_with_google()
+                visit_site_with_google(browser)
             else:
-                visit_other_site_direct()
+                visit_other_site_direct(browser)
 
         else:
             """go direct to target"""
-            visit_site_direct()
+            visit_site_direct(browser)
 
     except Exception as e:
         print("Error occurred. Retrying")
