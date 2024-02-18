@@ -31,10 +31,12 @@ def loop():
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 100
+    ctr = 15
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
-        actions.move_by_offset(10, 20)
+        a = random.randint(10, 15)
+        b = random.randint(15, 25)
+        actions.move_by_offset(a, b)
         actions.click()
         actions.perform()
         print("Ad Clicked")
@@ -70,7 +72,15 @@ def visit_site_direct(d_browser):
         d_browser.get(LinkManager().get_link())
         print("waiting 5s")
         time.sleep(5)
+        try:
+            cookie_ok = d_browser.find_element(By.XPATH, "//*[@id=\"cookieChoiceDismiss\"]")
+            if cookie_ok is not None:
+                cookie_ok.click()
+                print("Cookie dismissed!")
+        except Exception as e:
+            print("Error getting cookie button")
 
+        time.sleep(1)
         """Interaction with site"""
         print("Interaction..")
         """Scrolling to bottom using pg down, then back to top"""
@@ -114,38 +124,34 @@ def visit_site_with_google(g_browser):
 
         search_url = Router().get_search_link()
         g_browser.get(search_url)
+        g_wait = random.randint(5, 15)
+        print(f"waiting {g_wait}s")
+        time.sleep(g_wait)
 
-        print("waiting 5s")
-        time.sleep(5)
-
-        """Interaction with other site"""
-        print("Interaction..")
-        """Scrolling to bottom using pg down, then back to top"""
         try:
-            """Slowly scroll to bottom
-            time between 30s and 3m"""
-            page_finished = False
-            while not page_finished:
-                if not g_browser.execute_script(
-                        "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
-                    print("Still Scrolling")
+            google_read_more = WebDriverWait(g_browser, 5).until(EC.presence_of_element_located(
+                (By.XPATH, "//*[@id=\"KByQx\"]/div")))
 
-                    ActionChains(g_browser).send_keys(Keys.PAGE_DOWN).perform()
-                    sleep_time = random.randint(5, 10)
-                    print("Waiting " + str(sleep_time) + " Seconds after page down")
-                    time.sleep(sleep_time)
-                else:
-                    page_finished = True
-                    print("Scrolled To Bottom")
-            """Page Up"""
-            ActionChains(g_browser).send_keys(Keys.PAGE_UP).perform()
-            ActionChains(g_browser).send_keys(Keys.PAGE_UP).perform()
-            visit_other_site_direct(g_browser)
-
+            if google_read_more is not None:
+                google_read_more.click()
+                print("Google read more ok!\n")
         except Exception as e:
-            print("Error occurred. Retrying")
-            traceback.print_exc()
-            g_browser.quit()
+            print("Error getting google read more\n")
+
+        time.sleep(2)
+
+        try:
+            google_consent = WebDriverWait(g_browser, 5).until(EC.presence_of_element_located(
+                (By.XPATH, "//*[@id=\"L2AGLb\"]/div")))
+
+            if google_consent is not None:
+                google_consent.click()
+                print("Google consent ok!\n")
+        except Exception as e:
+            print("Error getting google consent\n")
+
+        time.sleep(2)
+        visit_other_site_direct(g_browser)
 
     except Exception as e:
         print("Error occurred. Retrying")
@@ -156,41 +162,14 @@ def visit_site_with_google(g_browser):
 def visit_other_site_direct(o_browser):
     print("Direct Visit --- Other site")
     try:
-        print("=====session start=====")
+        print("=====session start =====")
 
         o_browser.get(Rand().get_other_site_link())
+        o_wait = random.randint(5, 15)
+        print(f"waiting {o_wait}s")
+        time.sleep(o_wait)
 
-        print("waiting 5s")
-        time.sleep(5)
-
-        """Interaction with other site"""
-        print("Interaction..")
-        """Scrolling to bottom using pg down, then back to top"""
-        try:
-            """Slowly scroll to bottom
-            time between 30s and 3m"""
-            page_finished = False
-            while not page_finished:
-                if not o_browser.execute_script(
-                        "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
-                    print("Still Scrolling")
-
-                    ActionChains(o_browser).send_keys(Keys.PAGE_DOWN).perform()
-                    sleep_time = random.randint(5, 10)
-                    print("Waiting " + str(sleep_time) + " Seconds after page down")
-                    time.sleep(sleep_time)
-                else:
-                    page_finished = True
-                    print("Scrolled To Bottom")
-            """Page Up"""
-            ActionChains(o_browser).send_keys(Keys.PAGE_UP).perform()
-            ActionChains(o_browser).send_keys(Keys.PAGE_UP).perform()
-            visit_site_direct(o_browser)
-
-        except Exception as e:
-            print("Error occurred. Retrying")
-            traceback.print_exc()
-            o_browser.quit()
+        visit_site_direct(o_browser)
 
     except Exception as e:
         print("Error occurred. Retrying")

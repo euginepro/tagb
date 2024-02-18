@@ -399,3 +399,128 @@ Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
+1708290578205	geckodriver	INFO	Listening on 127.0.0.1:58486
+1708290581228	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (X11; Kali; Linux x ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilerJI4ZA"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708290581576	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708290581669	Marionette	INFO	Listening on port 58495
+WebDriver BiDi listening on ws://127.0.0.1:58487
+Read port: 58495
+1708290581977	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58487/devtools/browser/89819cb0-6257-40d1-8edb-d70b21c06a5f
+1708290587916	Marionette	INFO	Stopped listening on port 58495
+Dynamically enable window occlusion 1
+1708292521123	geckodriver	INFO	Listening on 127.0.0.1:61023
+1708292524154	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (iPod touch; CPU 15 ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilexQDxnM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708292524462	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708292524546	Marionette	INFO	Listening on port 61035
+WebDriver BiDi listening on ws://127.0.0.1:61024
+Read port: 61035
+1708292524847	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:61024/devtools/browser/361d059f-45ca-4bb6-8dfb-6f730443a259
+JavaScript warning: https://www.google.com/search?q=Conference+call, line 26: Script terminated by timeout at:
+n@https://www.google.com/search?q=Conference+call:26:194
+
+1708292554503	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-R3HLLCHFTS&l=dataLayer&cx=c, line 491: Script terminated by timeout at:
+aa.Fh@https://www.googletagmanager.com/gtag/js?id=G-R3HLLCHFTS&l=dataLayer&cx=c:491:89
+get@https://www.googletagmanager.com/gtag/js?id=G-R3HLLCHFTS&l=dataLayer&cx=c:489:119
+stop@https://www.googletagmanager.com/gtag/js?id=G-R3HLLCHFTS&l=dataLayer&cx=c:489:87
+aa.Zk/c/<@https://www.googletagmanager.com/gtag/js?id=G-R3HLLCHFTS&l=dataLayer&cx=c:489:412
+
+JavaScript warning: https://pagead2.googlesyndication.com/bg/Ke811GU8D9oP10uMu54EDqWuI5DGCOjC6vNIGcZJ2dY.js line 2 > eval line 1028 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.blogger.com/_/scs/mss-static/_/js/k=boq-blogger.BloggerCommentUi.en.Fn0qats70iM.es5.O/ck=boq-blogger.BloggerCommentUi.CO_cBbXYGbg.L.W.O/am=BgY0Bg/d=1/exm=A7fCU,BVgquf,COQbmf,EEDORb,EFQ78c,GkRiKb,IZT63,JNoxi,KG2eXe,KUM7Z,L1AAkb,LEikZe,MI6k7c,MdUzUe,Mlhmy,MpJwZc,NwH0H,O1Gjze,O6y8ed,OTA3Ae,OmgaI,PrPYRd,RMhBfe,SdcwHb,SpsfSb,U0aPgd,UUJqVe,Uas9Hd,Ulmmrd,V3dDOb,VXdfxd,VwDzFe,WO9ee,XVMNvd,YwHGTd,Z5uLle,ZfAoz,ZwDk9d,_b,_tp,aW3pY,aurFic,byfTOb,e5qFLc,eD1YLc,fKUV3e,fgib1c,gZjhIf,gychg,hKSk3e,hc6Ubd,kWgXee,kjKdXe,lazG7b,lsjVmc,lwddkf,mI3LFb,mdR7q,n73qwf,ovKuLd,pjICDe,pxq3x,vfuNJf,w9hDv,wmnU7d,ws9Tlc,xQtZb,xUdipf,yDVVkb,zbML3c,zr1jrb/excm=_b,_tp,commentformiframeview/ed=1/wt=2/ujg=1/rs=AEy-KP2asnTeB2suSquEIS_GGWCCpzNyXw/ee=EmZ2Bf:zr1jrb;Erl4fe:FloWmf;JsbNhc:Xd8iUd;LBgRLc:SdcwHb;Me32dd:MEeYgc;NPKaK:SdcwHb;NSEoX:lazG7b;Oj465e:KG2eXe;Pjplud:EEDORb;QGR0gd:Mlhmy;SNUn3:ZwDk9d;a56pNe:JEfCwb;cEt90b:ws9Tlc;dIoSBb:SpsfSb;eBAeSb:zbML3c;iFQyKf:vfuNJf;io8t5d:yDVVkb;kMFpHd:OTA3Ae;nAFL3:NTMZac;oGtAuc:sOXFj;pXdRYb:MdUzUe;qddgKe:xQtZb;sP4Vbe:VwDzFe;uY49fb:COQbmf;ul9GGd:VDovNc;wR5FRb:O1Gjze;xqZiqf:wmnU7d;yxTchf:KUM7Z;zxnPse:GkRiKb/m=RqjULd, line 10: Script terminated by timeout at:
+SF/<@https://www.blogger.com/_/scs/mss-static/_/js/k=boq-blogger.BloggerCommentUi.en.Fn0qats70iM.es5.O/ck=boq-blogger.BloggerCommentUi.CO_cBbXYGbg.L.W.O/am=BgY0Bg/d=1/exm=A7fCU,BVgquf,COQbmf,EEDORb,EFQ78c,GkRiKb,IZT63,JNoxi,KG2eXe,KUM7Z,L1AAkb,LEikZe,MI6k7c,MdUzUe,Mlhmy,MpJwZc,NwH0H,O1Gjze,O6y8ed,OTA3Ae,OmgaI,PrPYRd,RMhBfe,SdcwHb,SpsfSb,U0aPgd,UUJqVe,Uas9Hd,Ulmmrd,V3dDOb,VXdfxd,VwDzFe,WO9ee,XVMNvd,YwHGTd,Z5uLle,ZfAoz,ZwDk9d,_b,_tp,aW3pY,aurFic,byfTOb,e5qFLc,eD1YLc,fKUV3e,fgib1c,gZjhIf,gychg,hKSk3e,hc6Ubd,kWgXee,kjKdXe,lazG7b,lsjVmc,lwddkf,mI3LFb,mdR7q,n73qwf,ovKuLd,pjICDe,pxq3x,vfuNJf,w9hDv,wmnU7d,ws9Tlc,xQtZb,xUdipf,yDVVkb,zbML3c,zr1jrb/excm=_b,_tp,commentformiframeview/ed=1/wt=2/ujg=1/rs=AEy-KP2asnTeB2suSquEIS_GGWCCpzNyXw/ee=EmZ2Bf:zr1jrb;Erl4fe:FloWmf;JsbNhc:Xd8iUd;LBgRLc:SdcwHb;Me32dd:MEeYgc;NPKaK:SdcwHb;NSEoX:lazG7b;Oj465e:KG2eXe;Pjplud:EEDORb;QGR0gd:Mlhmy;SNUn3:ZwDk9d;a56pNe:JEfCwb;cEt90b:ws9Tlc;dIoSBb:SpsfSb;eBAeSb:zbML3c;iFQyKf:vfuNJf;io8t5d:yDVVkb;kMFpHd:OTA3Ae;nAFL3:NTMZac;oGtAuc:sOXFj;pXdRYb:MdUzUe;qddgKe:xQtZb;sP4Vbe:VwDzFe;uY49fb:COQbmf;ul9GGd:VDovNc;wR5FRb:O1Gjze;xqZiqf:wmnU7d;yxTchf:KUM7Z;zxnPse:GkRiKb/m=RqjULd:10:2180
+c@https://www.blogger.com/_/scs/mss-static/_/js/k=boq-blogger.BloggerCommentUi.en.Fn0qats70iM.es5.O/ck=boq-blogger.BloggerCommentUi.CO_cBbXYGbg.L.W.O/am=BgY0Bg/d=1/exm=A7fCU,BVgquf,COQbmf,EEDORb,EFQ78c,GkRiKb,IZT63,JNoxi,KG2eXe,KUM7Z,L1AAkb,LEikZe,MI6k7c,MdUzUe,Mlhmy,MpJwZc,NwH0H,O1Gjze,O6y8ed,OTA3Ae,OmgaI,PrPYRd,RMhBfe,SdcwHb,SpsfSb,U0aPgd,UUJqVe,Uas9Hd,Ulmmrd,V3dDOb,VXdfxd,VwDzFe,WO9ee,XVMNvd,YwHGTd,Z5uLle,ZfAoz,ZwDk9d,_b,_tp,aW3pY,aurFic,byfTOb,e5qFLc,eD1YLc,fKUV3e,fgib1c,gZjhIf,gychg,hKSk3e,hc6Ubd,kWgXee,kjKdXe,lazG7b,lsjVmc,lwddkf,mI3LFb,mdR7q,n73qwf,ovKuLd,pjICDe,pxq3x,vfuNJf,w9hDv,wmnU7d,ws9Tlc,xQtZb,xUdipf,yDVVkb,zbML3c,zr1jrb/excm=_b,_tp,commentformiframeview/ed=1/wt=2/ujg=1/rs=AEy-KP2asnTeB2suSquEIS_GGWCCpzNyXw/ee=EmZ2Bf:zr1jrb;Erl4fe:FloWmf;JsbNhc:Xd8iUd;LBgRLc:SdcwHb;Me32dd:MEeYgc;NPKaK:SdcwHb;NSEoX:lazG7b;Oj465e:KG2eXe;Pjplud:EEDORb;QGR0gd:Mlhmy;SNUn3:ZwDk9d;a56pNe:JEfCwb;cEt90b:ws9Tlc;dIoSBb:SpsfSb;eBAeSb:zbML3c;iFQyKf:vfuNJf;io8t5d:yDVVkb;kMFpHd:OTA3Ae;nAFL3:NTMZac;oGtAuc:sOXFj;pXdRYb:MdUzUe;qddgKe:xQtZb;sP4Vbe:VwDzFe;uY49fb:COQbmf;ul9GGd:VDovNc;wR5FRb:O1Gjze;xqZiqf:wmnU7d;yxTchf:KUM7Z;zxnPse:GkRiKb/m=RqjULd:10:1958
+
+JavaScript warning: https://pagead2.googlesyndication.com/bg/Ke811GU8D9oP10uMu54EDqWuI5DGCOjC6vNIGcZJ2dY.js line 2 > eval line 7593 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js, line 73: Script terminated by timeout at:
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:33
+Ic.prototype.Ha@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:86:196
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:264
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:392
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+n.Ha@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:79:182
+H.prototype.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:73:264
+n.unsubscribe@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:177
+n.complete@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:78:384
+n.D@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:326
+n.complete@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:98
+Xe.prototype.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:113:705
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+n.sa@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:101:367
+Zc.prototype.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:90:1342
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+Oc.prototype.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:88:601
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+Oc.prototype.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:88:601
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+Qh/c/</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:153:320
+Va@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:47:339
+Sa.prototype.flush@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:47:127
+Ua@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:46:466
+Qh/c/</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:153:292
+n.Fd@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:78:425
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:77:439
+n.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:223
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+Fg/</</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:237
+Ra.prototype.Yb/<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:46:298
+Fg/</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:246
+n.Fd@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:78:425
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:77:439
+n.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:223
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+Fg/</</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:237
+Ra.prototype.Yb/<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:46:298
+Fg/</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:246
+n.Fd@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:78:425
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:77:439
+n.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:223
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+pd/</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:96:671
+
+JavaScript warning: https://pagead2.googlesyndication.com/bg/Ke811GU8D9oP10uMu54EDqWuI5DGCOjC6vNIGcZJ2dY.js line 2 > eval line 5749 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js, line 5: Script terminated by timeout at:
+u@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:5:351
+Ra.prototype.Yb/<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:46:309
+Fg/</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:246
+n.Fd@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:78:425
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:77:439
+n.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:223
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+Fg/</</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:237
+Ra.prototype.Yb/<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:46:298
+Fg/</</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:136:246
+n.Fd@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:78:425
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:77:439
+n.o@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:76:223
+n.next@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:75:859
+pd/</<@https://pagead2.googlesyndication.com/pagead/managed/js/activeview/current/ufs_web_display.js:96:671
+
+JavaScript warning: https://pagead2.googlesyndication.com/bg/Ke811GU8D9oP10uMu54EDqWuI5DGCOjC6vNIGcZJ2dY.js line 2 > eval line 2507 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/Ke811GU8D9oP10uMu54EDqWuI5DGCOjC6vNIGcZJ2dY.js line 2 > eval line 1268 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/Ke811GU8D9oP10uMu54EDqWuI5DGCOjC6vNIGcZJ2dY.js line 2 > eval line 5747 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1708292666412	Marionette	INFO	Stopped listening on port 61035
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js, line 3: Script terminated by timeout at:
+add/r.handle@https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js:3:9086
+
+Dynamically enable window occlusion 1
