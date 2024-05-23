@@ -4,22 +4,20 @@ import traceback
 from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.edge.options import Options
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 
-from eurofutbol.proxies import ProxyManager
+from android_user_agents import UserAgentManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
+from eurofutbol.proxies import ProxyManager
 from user_agents import UserAgents
-from android_user_agents import UserAgentManager
+from tech_links import TechLinksManager
 
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
 from selenium import webdriver
-
-from eurofutbol.links import LinkManager
 
 
 def loop():
@@ -71,7 +69,7 @@ def visit_site_direct(d_browser):
     try:
         print("=====session start ..direct visit=====")
 
-        d_browser.get(LinkManager().get_link())
+        d_browser.get(TechLinksManager().get_link())
         print("waiting 5s")
         time.sleep(5)
         try:
@@ -188,12 +186,20 @@ def run_browser():
     else:
         custom_ua = UserAgents().get_user_agent()
         print("Using PC / iOS: " + custom_ua)
-    proxy_string = ProxyManager().get_proxy()
-    chrome_options = Options()
-    chrome_options.add_argument(f"--proxy-server=socks5://{proxy_string}")
-    chrome_options.add_argument(f"user-agent={custom_ua}")
-    browser = webdriver.ChromiumEdge(service=EdgeService(EdgeChromiumDriverManager().install()),
-                                     options=chrome_options)
+
+    PROXY = ProxyManager().get_proxy()
+    print(f'Using Proxy: {PROXY}')
+    proxy_host, proxy_port = PROXY.split(":")
+    options = webdriver.FirefoxOptions()
+    options.set_preference("network.proxy.type", 1)  # Manual proxy configuration
+    options.set_preference("network.proxy.socks", proxy_host)
+    options.set_preference("network.proxy.socks_port", int(proxy_port))
+    options.set_preference("network.proxy.socks_version", 5)
+    options.set_preference("network.proxy.socks_remote_dns", True)
+    options.add_argument(f"user-agent={custom_ua}")
+    options.set_preference("general.useragent.override", custom_ua)
+    browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+
     browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
     try:
         # choice to visit other site

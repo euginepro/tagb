@@ -8,7 +8,7 @@ class HostingLinks:
                       "https://www.greengeeks.com", "https://www.kinsta.com", "https://www.wpengine.com",
                       "https://www.hostinger.com", "https://www.cloudways.com", "https://www.liquidweb.com",
                       "https://www.iPage.com", "https://www.1and1.com", "https://www.namecheap.com/hosting",
-                      "https://www.fastcomet.com", "https://www.scalahosting.com", "https://www.webhostinghub.com",
+                      "https://www.fastcomet.com", "https://www.scalahosting.com", "https://www.webhostingcom",
                       "https://www.hostpapa.com", "https://www.flywheel.com"]
 
     def get_link(self):

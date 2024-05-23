@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+from eurofutbol.proxies import ProxyManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
 from user_agents import UserAgents
@@ -188,8 +189,12 @@ def run_browser():
         custom_ua = UserAgents().get_user_agent()
         print("Using PC / iOS: " + custom_ua)
 
+    s_proxy = ProxyManager().get_proxy()
+    print(f'Using Proxy: {s_proxy}')
+
     chrome_options = Options()
     chrome_options.add_argument(f"user-agent={custom_ua}")
+    chrome_options.add_argument(f"--proxy-server=socks5://{s_proxy}")
     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
                                options=chrome_options)
     browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))

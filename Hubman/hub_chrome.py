@@ -13,9 +13,9 @@ from selenium.webdriver.common.by import By
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from links import LinkManager
 
-siteLinkMain = "https://hub.euginetech.com/"
+
+siteLinkMain = "https://euginetech.com/"
 
 
 def loop():

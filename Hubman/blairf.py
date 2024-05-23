@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
+from eurofutbol.proxies import ProxyManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
 from user_agents import UserAgents
@@ -187,7 +188,15 @@ def run_browser():
         custom_ua = UserAgents().get_user_agent()
         print("Using PC / iOS: " + custom_ua)
 
+    PROXY = ProxyManager().get_proxy()
+    print(f'Using Proxy: {PROXY}')
+    proxy_host, proxy_port = PROXY.split(":")
     options = webdriver.FirefoxOptions()
+    options.set_preference("network.proxy.type", 1)  # Manual proxy configuration
+    options.set_preference("network.proxy.socks", proxy_host)
+    options.set_preference("network.proxy.socks_port", int(proxy_port))
+    options.set_preference("network.proxy.socks_version", 5)
+    options.set_preference("network.proxy.socks_remote_dns", True)
     options.add_argument(f"user-agent={custom_ua}")
     options.set_preference("general.useragent.override", custom_ua)
     browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)

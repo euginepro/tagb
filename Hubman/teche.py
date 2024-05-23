@@ -11,6 +11,7 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from eurofutbol.proxies import ProxyManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
+from tech_links import TechLinksManager
 from user_agents import UserAgents
 from android_user_agents import UserAgentManager
 
@@ -18,8 +19,6 @@ from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
 from selenium import webdriver
-
-from eurofutbol.links import LinkManager
 
 
 def loop():
@@ -71,7 +70,7 @@ def visit_site_direct(d_browser):
     try:
         print("=====session start ..direct visit=====")
 
-        d_browser.get(LinkManager().get_link())
+        d_browser.get(TechLinksManager().get_link())
         print("waiting 5s")
         time.sleep(5)
         try:

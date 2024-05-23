@@ -1,0 +1,1 @@
+python teche.py
