@@ -1,16 +1,11 @@
 import random
 import time
 import traceback
-from selenium.webdriver.support import expected_conditions as EC
 
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.firefox.options import Options
-
-from user_agents import UserAgents
-from android_user_agents import UserAgentManager
+from utils.user_agents import UserAgents
+from utils.android_user_agents import UserAgentManager
 
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
 
 from selenium import webdriver
 from links import LinkManager

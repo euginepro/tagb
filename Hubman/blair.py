@@ -10,8 +10,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from eurofutbol.proxies import ProxyManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
-from user_agents import UserAgents
-from android_user_agents import UserAgentManager
+from utils.user_agents import UserAgents
+from utils.android_user_agents import UserAgentManager
 
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By

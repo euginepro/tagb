@@ -7,12 +7,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
-from android_user_agents import UserAgentManager
+from utils.android_user_agents import UserAgentManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
 from eurofutbol.proxies import ProxyManager
-from user_agents import UserAgents
-from tech_links import TechLinksManager
+from utils.user_agents import UserAgents
+from eurofutbol.tech_links import TechLinksManager
 
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By

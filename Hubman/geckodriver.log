@@ -1287,3 +1287,260 @@ DevTools listening on ws://localhost:59917/devtools/browser/c4981925-616d-41d7-8
 Dynamically enable window occlusion 1
 console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 236))
 console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 236))
+1717722958915	geckodriver	INFO	Listening on 127.0.0.1:49518
+1717722961982	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 13; ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilexelFi9"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717722962877	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:49519
+1717722963126	Marionette	INFO	Listening on port 49529
+Read port: 49529
+1717722963466	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:49519/devtools/browser/44680b45-47d8-4f76-9f2b-785d2e7ffafb
+1717722993410	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1717723008245	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723008421	Marionette	INFO	Stopped listening on port 49529
+Dynamically enable window occlusion 1
+console.warn: services.settings: main/fingerprinting-protection-overrides sync interrupted by shutdown
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1717723019193	geckodriver	INFO	Listening on 127.0.0.1:49617
+1717723022245	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (iPad; CPU OS 16_6_ ... 8" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofile5VRorL"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723022709	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:49618
+1717723022904	Marionette	INFO	Listening on port 49627
+Read port: 49627
+1717723023244	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:49618/devtools/browser/2e542ab1-620c-4bcd-9546-cdfc6a3385ba
+1717723036411	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723036603	Marionette	INFO	Stopped listening on port 49627
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 236))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1717723109345	geckodriver	INFO	Listening on 127.0.0.1:49996
+1717723112666	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (iPad; CPU OS 13_6_ ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileyGhoNi"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723113228	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:49997
+1717723113841	Marionette	INFO	Listening on port 50073
+Read port: 50073
+1717723114283	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:49997/devtools/browser/01dd5105-5f40-43b9-a741-8b03ef1aaa31
+1717723135343	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723135545	Marionette	INFO	Stopped listening on port 50073
+Dynamically enable window occlusion 1
+console.error: services.settings: 
+  main/fingerprinting-protection-overrides Signature failed  TypeError: NetworkError: Network request failed
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1717723148544	geckodriver	INFO	Listening on 127.0.0.1:50163
+1717723151830	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 13; ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileqpVfcz"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723152450	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:50164
+1717723152696	Marionette	INFO	Listening on port 50171
+Read port: 50171
+1717723153060	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:50164/devtools/browser/19c0c9b5-d1ca-4e9b-8e44-2fd68ea1aa5e
+1717723165797	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723166031	Marionette	INFO	Stopped listening on port 50171
+Dynamically enable window occlusion 1
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1717723178603	geckodriver	INFO	Listening on 127.0.0.1:50221
+1717723181822	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 12; ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileKuGcRM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723182468	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:50222
+1717723182715	Marionette	INFO	Listening on port 50229
+Read port: 50229
+1717723183080	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:50222/devtools/browser/e49de1b0-d736-4345-b073-1a69f8ccc60f
+1717723212493	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1717723229253	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723229521	Marionette	INFO	Stopped listening on port 50229
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1717723245074	geckodriver	INFO	Listening on 127.0.0.1:50586
+1717723248544	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 13; ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofile6moz60"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723249183	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:50587
+1717723249434	Marionette	INFO	Listening on port 50594
+Read port: 50594
+1717723249883	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:50587/devtools/browser/c791d03a-b53d-47f2-b3bd-65a8bc141c95
+JavaScript error: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DConference%2Bcall&q=EgSmPiZkGPvAibMGIjD82eQGlJgpnba3F1HV6b10mCk_QxTdc1scZaSlU8Wdee2C8gmMaQUc1TvAI4c-I4UyAXJaAUM, line 1: SyntaxError: expected expression, got ','
+console.error: WebExtensions: 
+  Message: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIPropertyBag.getProperty]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: jar:file:///C:/Program%20Files/Mozilla%20Firefox/browser/omni.ja!/chrome/browser/builtin-addons/search-detection/api.js :: stopListener :: line 186"  data: no]
+  Stack:
+    stopListener@jar:file:///C:/Program%20Files/Mozilla%20Firefox/browser/omni.ja!/chrome/browser/builtin-addons/search-detection/api.js:186:32
+
+1717723279261	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1717723436843	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723437326	Marionette	INFO	Stopped listening on port 50594
+Dynamically enable window occlusion 1
+!!! error running onStopped callback: TypeError: callback is not a function
+1717723449789	geckodriver	INFO	Listening on 127.0.0.1:50786
+1717723452834	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 10; ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileBuU2zE"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723453285	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:50787
+1717723453487	Marionette	INFO	Listening on port 50794
+Read port: 50794
+1717723453809	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:50787/devtools/browser/96e7926e-9f08-4035-851b-20227209e5c6
+1717723464591	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723464714	Marionette	INFO	Stopped listening on port 50794
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 236))
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 236))
+1717723530808	geckodriver	INFO	Listening on 127.0.0.1:50966
+1717723533895	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 8.1 ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileiHnomW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723534702	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:50967
+1717723534929	Marionette	INFO	Listening on port 50974
+Read port: 50974
+1717723535279	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:50967/devtools/browser/c6b5e0b4-008d-4e13-ad4a-ad85dbe7d093
+1717723565017	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1717723579785	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723580036	Marionette	INFO	Stopped listening on port 50974
+Dynamically enable window occlusion 1
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.warn: services.settings: main/fingerprinting-protection-overrides sync interrupted by shutdown
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1717723594955	geckodriver	INFO	Listening on 127.0.0.1:51021
+1717723598252	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Macintosh; Intel M ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileFg8xj3"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723605344	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:51022
+1717723607465	Marionette	INFO	Listening on port 51032
+Read port: 51032
+1717723608902	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:51022/devtools/browser/693e9ba1-5bd1-484e-b6c1-ee1e90680c26
+1717723635347	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1717723672245	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1717723672432	Marionette	INFO	Stopped listening on port 51032
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1717723686058	geckodriver	INFO	Listening on 127.0.0.1:51088
+1717723689099	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 12; ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileZSGUlY"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1717723689597	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:51089
+1717723689816	Marionette	INFO	Listening on port 51097
+Read port: 51097
+1717723690200	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:51089/devtools/browser/eb97c14b-9d30-4d2a-b67b-4ab649bbec5f
+1717723719793	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://www.cloudways.com/wp-content/cache/breeze-minification/js/breeze_983f449cfb19349c9e2289e3fb139cca.js, line 200: TypeError: _.$slides is null
+JavaScript error: https://www.cloudways.com/wp-content/cache/breeze-minification/js/breeze_983f449cfb19349c9e2289e3fb139cca.js, line 306: ReferenceError: grecaptcha is not defined
+JavaScript warning: https://www.cloudways.com/wp-content/cache/breeze-minification/js/breeze_983f449cfb19349c9e2289e3fb139cca.js, line 9: Script terminated by timeout at:
+add/r.handle@https://www.cloudways.com/wp-content/cache/breeze-minification/js/breeze_983f449cfb19349c9e2289e3fb139cca.js:9:5173
+
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c, line 212: Script terminated by timeout at:
+f@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:212:1435
+e@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:212:1409
+f@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:212:1663
+J@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:213:349
+Sg@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:272:1337
+Hg/c<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:271:187
+ca.invoke@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:211:428
+Qa@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:185:465
+Xc.prototype.evaluate@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:212:72
+Rd@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:237:212
+ca.invoke@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:211:428
+Qa@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:185:465
+Oa@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:185:264
+zd@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:229:63
+Fd@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:232:137
+Gd@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:231:234
+ca.invoke@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:211:428
+Qa@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:185:465
+Oa@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:185:264
+Jd/<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:235:20
+ca.invoke@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:211:428
+PH/<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:661:708
+fs@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:456:231
+ca.Dm@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:639:427
+ca.Cm/</<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:623:236
+cm@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:354:371
+nm@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:357:392
+ca.Cm/<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:623:222
+c@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:478:169
+Wt@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:479:269
+ca.Cm@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:623:208
+c@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:645:801
+qn@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:368:1
+pn.prototype.flush@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:370:278
+pn.prototype.push@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:368:396
+hn@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:365:765
+gH/<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:646:178
+ca.Nk/<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:593:126
+ca.Nk/c/<@https://www.googletagmanager.com/gtag/js?id=G-BH873R8WMF&l=dataLayer&cx=c:592:420
+
+JavaScript error: https://www.gstatic.com/recaptcha/releases/9pvHvq7kSOTqqZusUzJ6ewaF/recaptcha__ja.js, line 299: Error: reCAPTCHA placeholder element must be an element or id
+JavaScript error: https://www.gstatic.com/recaptcha/releases/9pvHvq7kSOTqqZusUzJ6ewaF/recaptcha__ja.js, line 299: Error: reCAPTCHA placeholder element must be an element or id
+JavaScript warning: https://pagead2.googlesyndication.com/bg/EwGoFmJh85jiKfF-1zVyLpKT-mfRa9zDiFbQBwafAqI.js line 2 > eval line 7759 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

@@ -11,9 +11,9 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from eurofutbol.proxies import ProxyManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
-from tech_links import TechLinksManager
-from user_agents import UserAgents
-from android_user_agents import UserAgentManager
+from eurofutbol.tech_links import TechLinksManager
+from utils.user_agents import UserAgents
+from utils.android_user_agents import UserAgentManager
 
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
@@ -188,6 +188,7 @@ def run_browser():
         custom_ua = UserAgents().get_user_agent()
         print("Using PC / iOS: " + custom_ua)
     proxy_string = ProxyManager().get_proxy()
+    print(f'Using Proxy: {proxy_string}')
     chrome_options = Options()
     chrome_options.add_argument(f"--proxy-server=socks5://{proxy_string}")
     chrome_options.add_argument(f"user-agent={custom_ua}")

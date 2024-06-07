@@ -1,13 +1,15 @@
 import random
 import time
 import traceback
+
+from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
-from eurofutbol.tech_links import TechLinksManager
+from salma_muragon.salma_links import SalmaLinkManager
 from eurofutbol.proxies import ProxyManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
@@ -34,18 +36,36 @@ def click_ad(m_browser):
     ctr = 15
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
-        a = random.randint(10, 15)
-        b = random.randint(15, 25)
-        actions.move_by_offset(a, b)
-        actions.click()
-        actions.perform()
-        print("Ad Clicked")
-        print("\nwaiting page load before scroll\n")
-        time.sleep(random.randint(10, 15))
-        actions.send_keys(Keys.PAGE_DOWN).perform()
-        print("scrolled\n")
-        time.sleep(random.randint(1, 6))
-        actions.send_keys(Keys.PAGE_DOWN).perform()
+        try:
+            div = WebDriverWait(m_browser, 15).until(EC.presence_of_element_located((By.ID, "epad")))
+            print("div found")
+            actions.move_to_element(div).perform()
+            print("Moved to div")
+        except Exception as e:
+            print("div not found")
+
+        try:
+            element_to_click = WebDriverWait(m_browser, 40).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "#epad .adsbygoogle")))
+
+            actions.move_to_element(element_to_click).perform()
+            print("moved to ad")
+            time.sleep(1)
+            x_offset = random.randint(5, 15)
+            y_offset = random.randint(5, 15)
+            actions.move_by_offset(x_offset, y_offset).perform()
+            actions.click().perform()
+            print("clicked")
+            print("\nwaiting page load before scroll\n")
+            time.sleep(random.randint(10, 15))
+            actions.send_keys(Keys.PAGE_DOWN).perform()
+            print("scrolled\n")
+            time.sleep(random.randint(1, 6))
+            actions.send_keys(Keys.PAGE_DOWN).perform()
+        except Exception as e:
+            print("Ad Was not found")
+            traceback.print_exc()
+
         wait = random.randint(15, 45)
         print("waiting: " + str(wait))
         time.sleep(wait)
@@ -64,12 +84,30 @@ def click_ad(m_browser):
     print("Session Ended")
 
 
+def load_site(time_out, driver, salma_url):
+    try:
+        driver.set_page_load_timeout(time_out)
+        print(f'Using Timeout: {time_out}')
+        driver.get(salma_url)
+    except TimeoutException as e:
+        time_out *= 2.5
+        time.sleep(2)
+        if time_out < 241:
+            load_site(time_out, driver, salma_url)
+        else:
+            print("Max Timeout Exceeded! Retrying")
+            driver.quit()
+    except Exception as e:
+        traceback.print_exc()
+        driver.quit()
+
+
 def visit_site_direct(d_browser):
     print("Direct Visit")
     try:
         print("=====session start ..direct visit=====")
 
-        d_browser.get(TechLinksManager().get_link())
+        load_site(30, d_browser, SalmaLinkManager().get_link())
         print("waiting 5s")
         time.sleep(5)
         try:
@@ -119,7 +157,6 @@ def visit_site_direct(d_browser):
 
 def visit_site_with_google(g_browser):
     print("Doing Google Search")
-    print("Direct Visit --- Other site")
     try:
         print("=====session start ... google search=====")
 
