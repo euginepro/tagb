@@ -32,11 +32,11 @@ def loop():
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 15
+    ctr = 35
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
-        a = random.randint(10, 15)
-        b = random.randint(15, 25)
+        a = random.randint(5, 15)
+        b = random.randint(5, 15)
         actions.move_by_offset(a, b)
         actions.click()
         actions.perform()
@@ -47,32 +47,47 @@ def click_ad(m_browser):
         print("scrolled\n")
         time.sleep(random.randint(1, 6))
         actions.send_keys(Keys.PAGE_DOWN).perform()
-        wait = random.randint(15, 45)
+        wait = random.randint(3, 8)
         print("waiting: " + str(wait))
         time.sleep(wait)
         m_browser.quit()
         print("====End Session====")
-        time.sleep(random.randint(2, 5))
     else:
         print("Not to click this round")
-        wait = random.randint(25, 60)
+        wait = 2
         print("waiting: " + str(wait))
         time.sleep(wait)
         m_browser.quit()
         print("====End Session====")
-        time.sleep(random.randint(2, 5))
 
     print("Session Ended")
 
 
-def visit_site_direct(d_browser):
+def visit_site_direct(d_browser, page_views):
     print("Direct Visit")
+    print(f'To make {page_views} page views')
     try:
         print("=====session start ..direct visit=====")
 
         d_browser.get(LinkManager().get_link())
         print("waiting 5s")
         time.sleep(5)
+
+        got = False
+        runs = 0
+        while not got and runs < 20:
+            try:
+                consent_ok = d_browser.find_element(By.XPATH,
+                                                    f"/html/body/div[{runs}]/div[2]/div[1]/div[3]/div[2]/button[1]")
+                if consent_ok is not None:
+                    got = True
+                    consent_ok.click()
+                    print(f"Consent dismissed! at div {runs}")
+
+            except Exception as e:
+                print(f"Runs: {runs} but Consent button not found")
+            runs += 1
+
         try:
             cookie_ok = d_browser.find_element(By.XPATH, "//*[@id=\"cookieChoiceDismiss\"]")
             if cookie_ok is not None:
@@ -96,7 +111,7 @@ def visit_site_direct(d_browser):
                     print("Still Scrolling")
 
                     ActionChains(d_browser).send_keys(Keys.PAGE_DOWN).perform()
-                    sleep_time = random.randint(5, 30)
+                    sleep_time = random.randint(10, 20)
                     print("Waiting " + str(sleep_time) + " Seconds after page down")
                     time.sleep(sleep_time)
                 else:
@@ -104,9 +119,14 @@ def visit_site_direct(d_browser):
                     print("Scrolled To Bottom")
             """Scroll Back to top"""
             ActionChains(d_browser).send_keys(Keys.HOME).perform()
-            print("waiting 2 to 8 seconds")
-            time.sleep(random.randint(2, 8))
-            click_ad(d_browser)
+            print("waiting 2 to 5 seconds")
+            time.sleep(random.randint(2, 5))
+
+            page_views -= 1
+            if page_views > 0:
+                visit_site_direct(d_browser, page_views)
+            else:
+                click_ad(d_browser)
         except Exception as e:
             print("Error occurred. Retrying")
             traceback.print_exc()
@@ -120,13 +140,12 @@ def visit_site_direct(d_browser):
 
 def visit_site_with_google(g_browser):
     print("Doing Google Search")
-    print("Direct Visit --- Other site")
     try:
         print("=====session start ... google search=====")
 
         search_url = Router().get_search_link()
         g_browser.get(search_url)
-        g_wait = random.randint(5, 15)
+        g_wait = random.randint(1, 5)
         print(f"waiting {g_wait}s")
         time.sleep(g_wait)
 
@@ -152,7 +171,7 @@ def visit_site_with_google(g_browser):
         except Exception as e:
             print("Error getting google consent\n")
 
-        time.sleep(2)
+        time.sleep(1)
         visit_other_site_direct(g_browser)
 
     except Exception as e:
@@ -167,11 +186,11 @@ def visit_other_site_direct(o_browser):
         print("=====session start =====")
 
         o_browser.get(Rand().get_other_site_link())
-        o_wait = random.randint(5, 15)
+        o_wait = random.randint(1, 3)
         print(f"waiting {o_wait}s")
         time.sleep(o_wait)
 
-        visit_site_direct(o_browser)
+        visit_site_direct(o_browser, random.randint(1, 3))
 
     except Exception as e:
         print("Error occurred. Retrying")
@@ -212,7 +231,7 @@ def run_browser():
 
         else:
             """go direct to target"""
-            visit_site_direct(browser)
+            visit_site_direct(browser, random.randint(1, 3))
 
     except Exception as e:
         print("Error occurred. Retrying")

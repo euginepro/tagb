@@ -1,23 +1,26 @@
 import random
+import sys
 import time
 import traceback
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
-from utils.android_user_agents import UserAgentManager
+from ep_movies.click_proxies import ClickProxyManager
+from ep_movies.movie_links import MoviesLinkManager
 from eurofutbol.link_rand import Rand
 from eurofutbol.link_router import Router
-from eurofutbol.proxies import ProxyManager
 from utils.user_agents import UserAgents
-from eurofutbol.tech_links import TechLinksManager
+from utils.android_user_agents import UserAgentManager
 
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
 from selenium import webdriver
+
+from eurofutbol.links import LinkManager
 
 
 def loop():
@@ -25,50 +28,76 @@ def loop():
         while True:
             run_browser()
     except:
-        loop()
+        if RUNS > MAX_RUNS:
+            exit(0)
+        else:
+            loop()
 
 
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 35
+    ctr = 100
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
-        a = random.randint(5, 15)
-        b = random.randint(5, 15)
-        actions.move_by_offset(a, b)
-        actions.click()
-        actions.perform()
-        print("Ad Clicked")
-        print("\nwaiting page load before scroll\n")
-        time.sleep(random.randint(10, 15))
-        actions.send_keys(Keys.PAGE_DOWN).perform()
-        print("scrolled\n")
-        time.sleep(random.randint(1, 6))
-        actions.send_keys(Keys.PAGE_DOWN).perform()
-        wait = random.randint(3, 8)
+        try:
+            div = WebDriverWait(m_browser, 15).until(EC.presence_of_element_located((By.ID, "epad")))
+            print("div found")
+            actions.scroll_to_element(div).perform()
+            print("Scrolled to div")
+            actions.move_to_element(div).perform()
+            print("Moved to div")
+        except Exception as e:
+            print("div not found")
+
+        try:
+            element_to_click = WebDriverWait(m_browser, 15).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "#epad .adsbygoogle")))
+            actions.scroll_to_element(element_to_click).perform()
+            print("Scrolled to ad")
+            actions.move_to_element(element_to_click).perform()
+            print("moved to ad")
+            time.sleep(1)
+            x_offset = random.randint(5, 15)
+            y_offset = random.randint(5, 15)
+            actions.move_by_offset(x_offset, y_offset).perform()
+            actions.click().perform()
+            print("clicked")
+            print("\nwaiting page load before scroll\n")
+            time.sleep(random.randint(10, 15))
+            actions.send_keys(Keys.PAGE_DOWN).perform()
+            print("scrolled\n")
+            time.sleep(random.randint(1, 6))
+            actions.send_keys(Keys.PAGE_DOWN).perform()
+        except Exception as e:
+            print("Ad Was not found")
+            traceback.print_exc()
+
+        wait = random.randint(3, 10)
         print("waiting: " + str(wait))
         time.sleep(wait)
         m_browser.quit()
         print("====End Session====")
+        time.sleep(1)
     else:
         print("Not to click this round")
-        wait = 2
+        wait = random.randint(2, 8)
         print("waiting: " + str(wait))
         time.sleep(wait)
         m_browser.quit()
         print("====End Session====")
+        time.sleep(2)
 
     print("Session Ended")
 
 
 def visit_site_direct(d_browser, page_views):
     print("Direct Visit")
-    print(f'To make {page_views} page views')
+    print(f"To make {page_views} page views")
     try:
         print("=====session start ..direct visit=====")
 
-        d_browser.get(TechLinksManager().get_link())
+        d_browser.get(MoviesLinkManager().get_link())
         print("waiting 5s")
         time.sleep(5)
 
@@ -76,8 +105,7 @@ def visit_site_direct(d_browser, page_views):
         runs = 0
         while not got and runs < 20:
             try:
-                consent_ok = d_browser.find_element(By.XPATH,
-                                                    f"/html/body/div[{runs}]/div[2]/div[1]/div[3]/div[2]/button[1]")
+                consent_ok = d_browser.find_element(By.XPATH, f"/html/body/div[{runs}]/div[2]/div[1]/div[3]/div[2]/button[1]")
                 if consent_ok is not None:
                     got = True
                     consent_ok.click()
@@ -110,7 +138,7 @@ def visit_site_direct(d_browser, page_views):
                     print("Still Scrolling")
 
                     ActionChains(d_browser).send_keys(Keys.PAGE_DOWN).perform()
-                    sleep_time = random.randint(10, 20)
+                    sleep_time = random.randint(2, 10)
                     print("Waiting " + str(sleep_time) + " Seconds after page down")
                     time.sleep(sleep_time)
                 else:
@@ -126,6 +154,7 @@ def visit_site_direct(d_browser, page_views):
                 visit_site_direct(d_browser, page_views)
             else:
                 click_ad(d_browser)
+
         except Exception as e:
             print("Error occurred. Retrying")
             traceback.print_exc()
@@ -144,7 +173,7 @@ def visit_site_with_google(g_browser):
 
         search_url = Router().get_search_link()
         g_browser.get(search_url)
-        g_wait = random.randint(1, 5)
+        g_wait = random.randint(3, 8)
         print(f"waiting {g_wait}s")
         time.sleep(g_wait)
 
@@ -170,7 +199,7 @@ def visit_site_with_google(g_browser):
         except Exception as e:
             print("Error getting google consent\n")
 
-        time.sleep(1)
+        time.sleep(2)
         visit_other_site_direct(g_browser)
 
     except Exception as e:
@@ -185,19 +214,27 @@ def visit_other_site_direct(o_browser):
         print("=====session start =====")
 
         o_browser.get(Rand().get_other_site_link())
-        o_wait = random.randint(1, 3)
+        o_wait = random.randint(1, 4)
         print(f"waiting {o_wait}s")
         time.sleep(o_wait)
 
         visit_site_direct(o_browser, random.randint(1, 3))
 
     except Exception as e:
-        print("Error occurred. Retrying")
+        print("Other Site: Error occurred. Retrying")
         traceback.print_exc()
         o_browser.quit()
 
 
 def run_browser():
+    global RUNS
+    RUNS += 1
+    if RUNS > MAX_RUNS:
+        print("Max Runs Reached.")
+        exit(0)
+
+    print(f"Current runs: {RUNS}")
+
     numb = random.choice([0, 1])
     print("Selected Choice: " + str(numb))
     if numb == 0:
@@ -207,19 +244,14 @@ def run_browser():
         custom_ua = UserAgents().get_user_agent()
         print("Using PC / iOS: " + custom_ua)
 
-    PROXY = ProxyManager().get_proxy()
-    print(f'Using Proxy: {PROXY}')
-    proxy_host, proxy_port = PROXY.split(":")
-    options = webdriver.FirefoxOptions()
-    options.set_preference("network.proxy.type", 1)  # Manual proxy configuration
-    options.set_preference("network.proxy.socks", proxy_host)
-    options.set_preference("network.proxy.socks_port", int(proxy_port))
-    options.set_preference("network.proxy.socks_version", 5)
-    options.set_preference("network.proxy.socks_remote_dns", True)
-    options.add_argument(f"user-agent={custom_ua}")
-    options.set_preference("general.useragent.override", custom_ua)
-    browser = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+    s_proxy = ClickProxyManager().get_proxy(RUNS - 1)
+    print(f'Using Proxy: {s_proxy}')
 
+    chrome_options = Options()
+    chrome_options.add_argument(f"user-agent={custom_ua}")
+    chrome_options.add_argument(f"--proxy-server=socks5://{s_proxy}")
+    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
+                               options=chrome_options)
     browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
     try:
         # choice to visit other site
@@ -243,4 +275,6 @@ def run_browser():
         browser.quit()
 
 
+RUNS = 0
+MAX_RUNS = ClickProxyManager().get_proxy_length()
 loop()
