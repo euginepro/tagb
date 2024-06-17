@@ -1,3 +1,4 @@
+import json
 import random
 import sys
 import time
@@ -105,7 +106,8 @@ def visit_site_direct(d_browser, page_views):
         runs = 0
         while not got and runs < 20:
             try:
-                consent_ok = d_browser.find_element(By.XPATH, f"/html/body/div[{runs}]/div[2]/div[1]/div[3]/div[2]/button[1]")
+                consent_ok = d_browser.find_element(By.XPATH,
+                                                    f"/html/body/div[{runs}]/div[2]/div[1]/div[3]/div[2]/button[1]")
                 if consent_ok is not None:
                     got = True
                     consent_ok.click()
@@ -226,6 +228,12 @@ def visit_other_site_direct(o_browser):
         o_browser.quit()
 
 
+def load_cookies_from_file(file_path):
+    with open(file_path, 'r') as file:
+        m_cookies = json.load(file)
+    return m_cookies
+
+
 def run_browser():
     global RUNS
     RUNS += 1
@@ -253,6 +261,26 @@ def run_browser():
     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
                                options=chrome_options)
     browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
+    try:
+        print("Connecting to dev tools protocol")
+        browser.execute_cdp_cmd('Network.enable', {})
+        # Define multiple cookies
+        cookies = load_cookies_from_file("zcookies.json")
+        print("Cookies Loaded from file.")
+
+        if len(cookies) > 0:
+            print("Getting 100 unique cookies..")
+            unique_cookies = random.sample(cookies, min(len(cookies), 500))
+            # Set multiple cookies
+            print("Adding Cookies")
+            for unique_cookie in unique_cookies:
+                browser.execute_cdp_cmd('Network.setCookie', unique_cookie)
+            print("Cookies Added!.")
+        else:
+            print("Cookies Less Than 100")
+    except Exception as e1:
+        print("Error in cookie function")
+        traceback.print_exc()
     try:
         # choice to visit other site
         random_num = random.randint(1, 5)
