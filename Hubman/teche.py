@@ -1,3 +1,4 @@
+import json
 import random
 import time
 import traceback
@@ -32,7 +33,7 @@ def loop():
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 35
+    ctr = 38
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
@@ -228,6 +229,12 @@ def visit_other_site_direct(o_browser):
         o_browser.quit()
 
 
+def load_cookies_from_file(file_path):
+    with open(file_path, 'r') as file:
+        m_cookies = json.load(file)
+    return m_cookies
+
+
 def run_browser():
     numb = random.choice([0, 1])
     print("Selected Choice: " + str(numb))
@@ -245,6 +252,26 @@ def run_browser():
     browser = webdriver.ChromiumEdge(service=EdgeService(EdgeChromiumDriverManager().install()),
                                      options=chrome_options)
     browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
+    try:
+        print("Connecting to dev tools protocol")
+        browser.execute_cdp_cmd('Network.enable', {})
+        # Define multiple cookies
+        cookies = load_cookies_from_file("zcookies.json")
+        print("Cookies Loaded from file.")
+
+        if len(cookies) > 0:
+            print("Getting 100 unique cookies..")
+            unique_cookies = random.sample(cookies, min(len(cookies), 100))
+            # Set multiple cookies
+            print("Adding Cookies")
+            for unique_cookie in unique_cookies:
+                browser.execute_cdp_cmd('Network.setCookie', unique_cookie)
+            print("Cookies Added!.")
+        else:
+            print("Cookies Less Than 100")
+    except Exception as e1:
+        print("Error in cookie function")
+        traceback.print_exc()
     try:
         # choice to visit other site
         random_num = random.randint(1, 5)

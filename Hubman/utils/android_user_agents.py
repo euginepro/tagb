@@ -2126,3 +2126,12 @@ class UserAgentManager:
     def get_phone_user_agent(self):
         self.phone_user_agent = f"{self.mozilla_version} ({self.platform} {self.os_type}; {self.current_phone_name}) {self.browser_specs}"
         return self.phone_user_agent
+
+
+'''i = 0
+s = ''
+while i < 500:
+    s += UserAgentManager().get_phone_user_agent() + '\n'
+    i += 1
+with open("Android User Agents.txt", 'w') as f:
+    f.write(s) '''
