@@ -32,7 +32,7 @@ def loop():
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 30
+    ctr = 25
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:

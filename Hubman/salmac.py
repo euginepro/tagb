@@ -278,7 +278,7 @@ def run_browser():
 
         if len(cookies) > 0:
             print("Getting 100 unique cookies..")
-            unique_cookies = random.sample(cookies, min(len(cookies), 300))
+            unique_cookies = random.sample(cookies, min(len(cookies), 1000))
             # Set multiple cookies
             print("Adding Cookies")
             for unique_cookie in unique_cookies:

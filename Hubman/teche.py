@@ -33,7 +33,7 @@ def loop():
 def click_ad(m_browser):
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 30
+    ctr = 25
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
@@ -261,7 +261,7 @@ def run_browser():
 
         if len(cookies) > 0:
             print("Getting 100 unique cookies..")
-            unique_cookies = random.sample(cookies, min(len(cookies), 300))
+            unique_cookies = random.sample(cookies, min(len(cookies), 1000))
             # Set multiple cookies
             print("Adding Cookies")
             for unique_cookie in unique_cookies:
