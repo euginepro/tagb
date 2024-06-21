@@ -2206,3 +2206,250 @@ Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
+1718815993627	geckodriver	INFO	Listening on 127.0.0.1:56901
+1718815996942	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (X11; Ubuntu; Linux ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilegYWh2t"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718815997810	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56902
+17188159981718816000948	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux;JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718816004947	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56931
+1718816005380	Marionette	INFO	Listening on port 56983
+Read port: 56983
+1718816006177	RemoteAgent	WARN	TLS certificate errors will be ignored for1718816027963	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816046342	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816047258	Marionette	INFO	Stopped listening on port 56929
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network req1718816053557	Marionette	WARN	Ignoring event 'pageshow' because document has an in*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_untrustedmodules_ping
+JavaScript error: resource://gre/modules/UrlClassifierListManager.sys.mjs, line 472: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+error: (new AbortError("IOUtils: Shutting down and refusing additional I/O tasks (NS_ERROR_ABORT)", (void 0), 1106))
+JavaScript error: resource://gre/modules/CrashManager.sys.mjs, line 111718816175228	Marionette	INFO	Stopped listening on port 56982
+Dynamically enable window occlusion 1
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"ContentParent: id=1bebf7b1700","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""}] Barrier: profile-before-change
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+gs server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718816107845	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57698
+1718816109462	Marionette	INFO	Listening on port 57763
+Read port: 57763
+1718816111548	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://localhost:57698/devtools/browser/0d5c0048-7b79-461c-bba7-91900433823f
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError1718816128177	addons.xpi	ERROR	System addon update list erro1718816138079	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http1718816149345	Marionette	WARN	Ignoring event 'pageshow' beca1718816194615	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816195511	Marionette	INFO	Stopped listening on port 57763
+Dynamically enable window occlusion 1
+console.error: services.settings: 
+  Message: NetworkError: Network error: TypeError: NetworkError: Network request failed
+  Stack:
+    APIError@resource://services-settings/RemoteSettingsClient.sys.mjs:107:1
+NetworkError@resource://services-settings/RemoteSettingsClient.sys.mjs:111:5
+_adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:912:14
+maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:817:38
+
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.warn: services.settings: main/devtools-compatibility-browsers sync interrupted by shutdown
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.warn: services.settings: main/search-config-v2 sync interrupted by shutdown
+console.warn: services.settings: main/search-telemetry-v2 sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync interrupted by shutdown
+console.error: (new Error("IndexedDB: main/cfr-srg getLastModified() IndexedDB:  execute() The application is shutting down", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1718816204229	geckodriver	INFO	Listening on 127.0.0.1:58318
+1718816207318	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 9.0 ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-p1718816208132	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 10; ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilex708FN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the env1718816208Dynamically enable window occlusion 0
+1718816209323	Marionette	INFO	MarionettJavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: rJavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncRe1718816238329	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816255565	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816262644	Marionette	INFO	Stopped listening on port 58361
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"ContentParent: id=1810b9ed800","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""}] Barrier: profile-before-change
+71c44f700","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""}] Barrier: profile-before-change
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+tening on ws://localhost:58473/devtools/browser/6dfd886a-58f3-4433-8012-9d5200d7c2eb
+1718816272510	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816275461	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816276146	Marionette	INFO	Stopped listening on port 58516
+Dynamically enable window occlusion 1
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+!!! error running onStopped callback: TypeError: callback is not a function
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_untrustedmodules_ping
+ 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:58618/devtools/browser/a860e59a-45bc-4ee2-aea6-9f08a45485aa
+1718816293212	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816351054	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816352129	Marionette	INFO	Stopped listening on port 58714
+Dynamically enable window occlusion 1
+console.error: services.settings: 
+  Message: NetworkError: Network error: TypeError: NetworkError: Network request failed
+  Stack:
+    APIError@resource://services-settings/RemoteSettingsClient.sys.mjs:107:1
+NetworkError@resource://services-settings/RemoteSettingsClient.sys.mjs:111:5
+_adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:912:14
+maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:817:38
+
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.warn: services.settings: main/devtools-compatibility-browsers sync interrupted by shutdown
+console.warn: services.settings: main/search-config-v2 sync interrupted by shutdown
+console.warn: services.settings: main/search-telemetry-v2 sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync inte1718816363744	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816364329	Marionette	INFO	Stopped listening on port 59776
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+!!! error running onStopped callback: TypeError: callback is not a function
+pted by shutdown
+console.warn: services.settings: main/password-recipes sync interrupted by shutdown
+console.warn: services.settings: main/password-rules sync interrupted by shutdown
+console.warn: services.settings: main/fxmonitor-breaches sync interrupted by shutdown
+console.warn: services.settings: main/addons-manager-settings sync interrupted by shutdown
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.warn: services.settings: main/translations-wasm sy1718816363079	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816417478	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816418097	Marionette	INFO	Stopped listening on port 59935
+Dynamically enable window occlusion 1
+console.error: services.settings: 
+  Message: NetworkError: Network error: TypeError: NetworkError: Network request failed
+  Stack:
+    APIError@resource://services-settings/RemoteSettingsClient.sys.mjs:107:1
+NetworkError@resource://services-settings/RemoteSettingsClient.sys.mjs:111:5
+_adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:912:14
+maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:817:38
+
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.warn: services.settings: main/devtools-compatibility-browsers sync interrupted by shutdown
+console.warn: services.settings: main/search-config-v2 sync interrupted by shutdown
+console.warn: services.settings: main/search-telemetry-v2 sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/sites-classification sync interrupted by shutdown
+console.warn: services.settings: main/anti-tracking-url-decoration sync interrupted by shutdown
+console.warn: services.settings: main/public-suffix-list sync interrupted by shutdown
+console.warn: services.settings: main/hijack-blocklists sync interrupted by shutdown
+console.warn: services.settings: main/pioneer-study-addons-v1 sync interrupted by shutdown
+console.warn: services.settings: main/top-sites sync interrupted by shutdown
+console.warn: services.settings: main/doh-providers sync interrupted by shutdown
+console.warn: services.settings: main/doh-config sync interrupted by shutdown
+console.warn: services.settings: main/devtools-devices sync interrupted by shutdown
+console.warn: services.settings: main/websites-with-shared-credential-backends sync interrupted by shutdown
+console.warn: services.settings: main/language-dictionaries sync interrupted by shutdown
+console.warn: services.settings: main/password-recipes sync interrupted by shutdown
+console.warn: services.settings: main/password-rules sync interrupted by shutdown
+console.warn: services.settings: main/fxmonitor-breaches sync int1718816426974	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816456501	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816457647	Marionette	INFO	Stopped listening on port 60277
+Dynamically enable window occlusion 1
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+JavaScript error: resource://gre/modules/UrlClassifierListManager.sys.mjs, line 472: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+ing on port 60263
+Dynamically enable window occlusion 1
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request fa1718816468846	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState1718816471693	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (X11; Fedora; Linux ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileOySXVz"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718816472844	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:6console.error: (new AbortError("IOUtils: Shutting down and refusing additional I/O tasks (NS_ERROR_ABORT)", (void 0), 1106))
+JavaScript error: resource://gre/modulesJavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:60626/devtools/browser/0bfa5298-fc68-4c4a-938e-4a19250fa221
+1718816503243	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816521226	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816521635	Marionette	INFO	Stopped listening on port 60643
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+!!! error running onStopped callback: TypeError: callback is not a function
+console.error: (new Error("Data is not ready.", "resource://gre/modules/JSONFile.sys.mjs", 178))
+x\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 11; ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileHSMoSN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically en1718816529677	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816552255	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816553697	Marionette	INFO	Stopped listening on port 60780
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+st.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816560212	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816561497	Marionette	INFO	Stopped listening on port 60849
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+this session
+DevTools listening on ws://localhost:61045/devtools/browser/63f59f4e-5f8e-4aad-860b-f9139eda9654
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error:DevTools listening on ws://localhost:61042/devtools/browser/2df88708-0860-415d-8215-845a1ea0e6a6
+1718816585073	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816605446	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816605854	Marionette	INFO	Stopped listening on port 61139
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/1718816608727	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (X11; Kali; Linux x ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilexR8xK9"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718816609672	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:61582
+1718816610324	Marionette	INFO	Listening on port 61611
+Read port: 61611
+1718816611151	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:61582/devtools/browser/844b0627-b237-4fea-9fe0-7467c60be442
+1718816639962	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718816658323	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718816658676	Marionette	INFO	Stopped listening on port 61611
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_untrustedmodules_ping
+JavaScript error: resource://gre/modules/UrlClassifierListManager.sys.mjs, line 472: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+console.error: (new Error("SessionFile is closed", "resource:///modules/sessionstore/SessionFile.sys.mjs", 450))
+WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"ContentParent: id=282992b1900","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""},{"name":"ContentParent: id=2829c411900","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""}] Barrier: profile-before-change
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
