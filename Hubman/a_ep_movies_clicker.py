@@ -10,7 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from ep_movies.click_proxies import ClickProxyManager
 from ep_movies.movie_links import MoviesLinkManager
-from Hubman.link_rand import Rand
+from link_rand import Rand
 from eurofutbol.link_router import Router
 from utils.user_agents import UserAgents
 from utils.android_user_agents import UserAgentManager

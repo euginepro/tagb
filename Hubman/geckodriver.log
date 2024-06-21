@@ -2928,3 +2928,23 @@ Dynamically enable window occlusion 1
 console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
 console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
 1718997723273	geckodriver	INFO	Listening on 127.0.0.1:57548
+1719001713802	geckodriver	INFO	Listening on 127.0.0.1:58062
+1719001716696	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 8.1 ... 3" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilem8ayvQ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1719001717675	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:58063
+1719001717967	Marionette	INFO	Listening on port 58115
+Read port: 58114
+1719001719016	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:58073/devtools/browser/2bd373e5-5579-46fa-b3cc-50a316a3ed7c
+1719001747667	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1719001783220	Marionette	INFO	Stopped listening on port 58115
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))

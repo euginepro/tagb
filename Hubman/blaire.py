@@ -10,7 +10,7 @@ from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 from eurofutbol.proxies import ProxyManager
-from Hubman.link_rand import Rand
+from link_rand import Rand
 from eurofutbol.link_router import Router
 from utils.user_agents import UserAgents
 from utils.android_user_agents import UserAgentManager

@@ -8,7 +8,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
 from utils.android_user_agents import UserAgentManager
-from Hubman.link_rand import Rand
+from link_rand import Rand
 from eurofutbol.link_router import Router
 from eurofutbol.proxies import ProxyManager
 from utils.user_agents import UserAgents
