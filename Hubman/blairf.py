@@ -8,7 +8,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
 from eurofutbol.proxies import ProxyManager
-from eurofutbol.link_rand import Rand
+from Hubman.link_rand import Rand
 from eurofutbol.link_router import Router
 from utils.user_agents import UserAgents
 from utils.android_user_agents import UserAgentManager
@@ -202,7 +202,7 @@ def visit_site_with_google(g_browser):
             print("Error getting google consent\n")
 
         time.sleep(1)
-        visit_other_site_direct(g_browser)
+        visit_other_site_direct(g_browser, random.randint(1, 2))
 
     except Exception as e:
         print("Error occurred. Retrying")
@@ -210,8 +210,9 @@ def visit_site_with_google(g_browser):
         g_browser.quit()
 
 
-def visit_other_site_direct(o_browser):
+def visit_other_site_direct(o_browser, visits):
     print("Direct Visit --- Other site")
+    print(f'To make {visits} other visits')
     try:
         print("=====session start =====")
 
@@ -220,7 +221,11 @@ def visit_other_site_direct(o_browser):
         print(f"waiting {o_wait}s")
         time.sleep(o_wait)
 
-        visit_site_direct(o_browser, random.randint(1, 3))
+        visits -= 1
+        if visits > 0:
+            visit_other_site_direct(o_browser, visits)
+        else:
+            visit_site_direct(o_browser, random.randint(1, 3))
 
     except Exception as e:
         print("Error occurred. Retrying")
@@ -262,7 +267,7 @@ def run_browser():
             if google_random <= 4:
                 visit_site_with_google(browser)
             else:
-                visit_other_site_direct(browser)
+                visit_other_site_direct(browser, random.randint(1, 2))
 
         else:
             """go direct to target"""

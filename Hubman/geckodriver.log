@@ -2453,3 +2453,478 @@ console.error: (new Error("SessionFile is closed", "resource:///modules/sessions
 WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"ContentParent: id=282992b1900","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""},{"name":"ContentParent: id=2829c411900","state":{"remoteTypePrefix":"webIsolated"},"filename":"/builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp","lineNumber":3990,"stack":""}] Barrier: profile-before-change
 A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
 A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1718996652379	geckodriver	INFO	Listening on 127.0.0.1:56543
+1718996655450	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Macintosh; Intel M ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofile5c8Knx"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718996656273	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56544
+1718996656480	Marionette	INFO	Listening on port 56551
+Read port: 56551
+1718996656743	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:56544/devtools/browser/e1cea861-a29a-45d8-ae2e-950091ff5120
+1718996686450	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718996701535	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718996701706	Marionette	INFO	Stopped listening on port 56551
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+1718996713355	geckodriver	INFO	Listening on 127.0.0.1:56600
+1718996716411	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Windows NT 10.0; W ... 1" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileN14yeH"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718996716751	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56601
+1718996716905	Marionette	INFO	Listening on port 56609
+Read port: 56609
+1718996717171	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:56601/devtools/browser/157c06d6-0701-4a92-be84-94d1d6ebd82b
+1718996746793	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/hOaKO2SoUP5ZvIeLrcFj7DiKWZPkW4aKTYwro_EJXjQ.js line 2 > eval line 1165 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.youtube.com/s/player/84314bef/player_ias.vflset/en_US/base.js, line 12130: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/hOaKO2SoUP5ZvIeLrcFj7DiKWZPkW4aKTYwro_EJXjQ.js line 2 > eval line 1993 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1718996938352	Marionette	INFO	Stopped listening on port 56609
+Dynamically enable window occlusion 1
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+1718996950341	geckodriver	INFO	Listening on 127.0.0.1:56789
+1718996953394	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 10; ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileIWm4um"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718996953743	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56790
+1718996953903	Marionette	INFO	Listening on port 56797
+Read port: 56797
+1718996954184	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:56790/devtools/browser/9681e757-eb1b-42a9-ae82-1b46ea3221f4
+1718996983763	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718996998649	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718996998741	Marionette	INFO	Stopped listening on port 56797
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997008742	geckodriver	INFO	Listening on 127.0.0.1:56842
+1718997011777	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 13; ... 3" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilekiPx7n"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997012124	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56843
+1718997012279	Marionette	INFO	Listening on port 56850
+Read port: 56850
+1718997012561	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:56843/devtools/browser/22e99ae9-b3e1-4ae6-afaa-2fd2f1c94694
+1718997042352	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997057056	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997057163	Marionette	INFO	Stopped listening on port 56850
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997067453	geckodriver	INFO	Listening on 127.0.0.1:56895
+1718997070494	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 9.0 ... 6" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileaGeeFt"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997070838	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56896
+1718997070990	Marionette	INFO	Listening on port 56903
+Read port: 56903
+1718997071271	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:56896/devtools/browser/caccfc89-f48e-4cea-bfeb-58b90a22e87a
+1718997100846	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997115658	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997115760	Marionette	INFO	Stopped listening on port 56903
+Dynamically enable window occlusion 1
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997125933	geckodriver	INFO	Listening on 127.0.0.1:56948
+1718997128972	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Macintosh; Intel M ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofile4VPzRM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997129319	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:56949
+1718997129484	Marionette	INFO	Listening on port 56956
+Read port: 56956
+1718997129755	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:56949/devtools/browser/51e92a52-3eb5-4b55-9ff0-c2cd3ab90700
+1718997159466	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997174147	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997174260	Marionette	INFO	Stopped listening on port 56956
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997184548	geckodriver	INFO	Listening on 127.0.0.1:57002
+1718997187598	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 13; ... 3" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofileEajVsO"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997187944	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57003
+1718997188109	Marionette	INFO	Listening on port 57010
+Read port: 57010
+1718997188390	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57003/devtools/browser/b0bff0d5-3086-4e2c-ae8e-7fba57461979
+1718997217991	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/VKtwqYIMw_jEtcsYEdk2t0uWx1X5nCbHNvrRSJpikmk.js line 2 > eval line 1012 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1718997333035	Marionette	INFO	Stopped listening on port 57010
+Dynamically enable window occlusion 1
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+console.error: RemoteSecuritySettings: 
+  failed to download CRLite filter
+  Message: TypeError: NetworkError: Network request failed
+  Stack:
+    fetch/</request.onerror@resource://services-settings/Utils.sys.mjs:236:26
+
+1718997346157	geckodriver	INFO	Listening on 127.0.0.1:57176
+1718997349222	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Macintosh; Intel M ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilen7gG5D"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997349564	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57177
+1718997349718	Marionette	INFO	Listening on port 57184
+Read port: 57184
+1718997349972	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57177/devtools/browser/b87edc8a-8a36-47f6-84ff-f3a9c49fa863
+1718997379687	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997394352	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997394449	Marionette	INFO	Stopped listening on port 57184
+Dynamically enable window occlusion 1
+console.warn: services.settings: main/fingerprinting-protection-overrides sync interrupted by shutdown
+console.warn: services.settings: main/query-stripping sync interrupted by shutdown
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997404411	geckodriver	INFO	Listening on 127.0.0.1:57228
+1718997407446	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 9.0 ... 9" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilekjad6A"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997407795	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57229
+1718997407948	Marionette	INFO	Listening on port 57236
+Read port: 57236
+1718997408189	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57229/devtools/browser/06629d46-70c5-4087-aa36-ffdab8f4e45b
+1718997437813	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997452640	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997452750	Marionette	INFO	Stopped listening on port 57236
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997462676	geckodriver	INFO	Listening on 127.0.0.1:57281
+1718997465738	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 8.1 ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilerKQUf1"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997466084	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57282
+1718997466243	Marionette	INFO	Listening on port 57289
+Read port: 57289
+1718997466499	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57282/devtools/browser/e352c1dd-89c5-4950-954c-852d00f113ca
+1718997496106	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997510861	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997510970	Marionette	INFO	Stopped listening on port 57289
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997520975	geckodriver	INFO	Listening on 127.0.0.1:57333
+1718997524001	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Windows NT 10.0; W ... 4" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilefneTwy"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997524420	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57334
+1718997524631	Marionette	INFO	Listening on port 57341
+Read port: 57341
+1718997524937	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57334/devtools/browser/25126994-6ae6-4b6d-85b3-e2b2f5637bd2
+1718997533613	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997533713	Marionette	INFO	Stopped listening on port 57341
+Dynamically enable window occlusion 1
+1718997544085	geckodriver	INFO	Listening on 127.0.0.1:57379
+1718997547129	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (iPad; CPU OS 17_0_ ... 0" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilegYCpbe"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997547470	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57380
+1718997547623	Marionette	INFO	Listening on port 57387
+Read port: 57387
+1718997547878	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57380/devtools/browser/e84e1c1c-da73-4024-a191-b7daff54fdd8
+1718997577488	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997592225	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997592324	Marionette	INFO	Stopped listening on port 57387
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997602341	geckodriver	INFO	Listening on 127.0.0.1:57436
+1718997605409	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 8.1 ... 7" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofile3LCHDp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997605746	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57437
+1718997605894	Marionette	INFO	Listening on port 57444
+Read port: 57444
+1718997606162	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57437/devtools/browser/3b99aaa0-ea81-4885-9914-a576e9862eee
+1718997635784	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997650602	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997650716	Marionette	INFO	Stopped listening on port 57444
+Dynamically enable window occlusion 1
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997664593	geckodriver	INFO	Listening on 127.0.0.1:57491
+1718997667635	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "user-agent=Mozilla/5.0 (Linux; Android 11; ... 2" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\eugin\\AppData\\Local\\Temp\\rust_mozprofilebYMdYd"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1718997667988	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:57492
+1718997668137	Marionette	INFO	Listening on port 57499
+Read port: 57499
+1718997668392	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 629: NS_ERROR_UNKNOWN_PROXY_HOST: Component returned failure code: 0x804b002a (NS_ERROR_UNKNOWN_PROXY_HOST) [nsIDNSService.asyncResolve]
+JavaScript error: chrome://global/content/aboutNetError.mjs, line 418: InvalidStateError: An exception was thrown
+DevTools listening on ws://localhost:57492/devtools/browser/b605f647-9dc3-41bb-b6f0-f14491eef543
+1718997698146	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1718997712936	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1718997713044	Marionette	INFO	Stopped listening on port 57499
+Dynamically enable window occlusion 1
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1718997723273	geckodriver	INFO	Listening on 127.0.0.1:57548

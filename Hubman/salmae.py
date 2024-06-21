@@ -13,7 +13,7 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 from salma_muragon.salma_links import SalmaLinkManager
 from eurofutbol.proxies import ProxyManager
-from eurofutbol.link_rand import Rand
+from Hubman.link_rand import Rand
 from eurofutbol.link_router import Router
 from utils.user_agents import UserAgents
 from utils.android_user_agents import UserAgentManager
@@ -216,7 +216,7 @@ def visit_site_with_google(g_browser):
             print("Error getting google consent\n")
 
         time.sleep(2)
-        visit_other_site_direct(g_browser)
+        visit_other_site_direct(g_browser, random.randint(1, 2))
 
     except Exception as e:
         print("Error occurred. Retrying")
@@ -224,28 +224,27 @@ def visit_site_with_google(g_browser):
         g_browser.quit()
 
 
-def visit_other_site_direct(o_browser):
+def visit_other_site_direct(o_browser, visits):
     print("Direct Visit --- Other site")
+    print(f'To make {visits} other visits')
     try:
         print("=====session start =====")
 
         o_browser.get(Rand().get_other_site_link())
-        o_wait = random.randint(1, 5)
+        o_wait = random.randint(1, 3)
         print(f"waiting {o_wait}s")
         time.sleep(o_wait)
 
-        visit_site_direct(o_browser, random.randint(1, 3))
+        visits -= 1
+        if visits > 0:
+            visit_other_site_direct(o_browser, visits)
+        else:
+            visit_site_direct(o_browser, random.randint(1, 3))
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
         o_browser.quit()
-
-
-def load_cookies_from_file(file_path):
-    with open(file_path, 'r') as file:
-        m_cookies = json.load(file)
-    return m_cookies
 
 
 def run_browser():
@@ -265,26 +264,7 @@ def run_browser():
     browser = webdriver.ChromiumEdge(service=EdgeService(EdgeChromiumDriverManager().install()),
                                      options=chrome_options)
     browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
-    try:
-        print("Connecting to dev tools protocol")
-        browser.execute_cdp_cmd('Network.enable', {})
-        # Define multiple cookies
-        cookies = load_cookies_from_file("zcookies.json")
-        print("Cookies Loaded from file.")
 
-        if len(cookies) > 0:
-            print("Getting 100 unique cookies..")
-            unique_cookies = random.sample(cookies, min(len(cookies), random.randint(30, 100)))
-            # Set multiple cookies
-            print("Adding Cookies")
-            for unique_cookie in unique_cookies:
-                browser.execute_cdp_cmd('Network.setCookie', unique_cookie)
-            print("Cookies Added!.")
-        else:
-            print("Cookies Less Than 100")
-    except Exception as e1:
-        print("Error in cookie function")
-        traceback.print_exc()
     try:
         # choice to visit other site
         random_num = random.randint(1, 5)
@@ -295,7 +275,7 @@ def run_browser():
             if google_random <= 4:
                 visit_site_with_google(browser)
             else:
-                visit_other_site_direct(browser)
+                visit_other_site_direct(browser, random.randint(1, 2))
 
         else:
             """go direct to target"""
