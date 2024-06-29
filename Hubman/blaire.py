@@ -61,7 +61,7 @@ def click_ad(m_browser):
             actions.click().perform()
             print("clicked")
 
-            wt = random.randint(30, 72)
+            wt = random.randint(40, 72)
             print("\nwaiting page load before scroll\n")
             print(f'Waiting {wt}')
             time.sleep(wt)
@@ -69,7 +69,7 @@ def click_ad(m_browser):
             actions.send_keys(Keys.PAGE_DOWN).perform()
             print("scrolled\n")
 
-            wt2 = random.randint(15, 80)
+            wt2 = random.randint(45, 80)
             print(f' Waiting {wt2}')
             time.sleep(wt2)
             actions.send_keys(Keys.PAGE_DOWN).perform()

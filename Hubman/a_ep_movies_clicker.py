@@ -8,6 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+from eurofutbol.proxies import ProxyManager
 from ep_movies.click_proxies import ClickProxyManager
 from ep_movies.movie_links import MoviesLinkManager
 from link_rand import Rand
@@ -62,10 +63,10 @@ def click_ad(m_browser):
             actions.click().perform()
             print("clicked")
             print("\nwaiting page load before scroll\n")
-            time.sleep(random.randint(10, 15))
+            time.sleep(random.randint(40, 75))
             actions.send_keys(Keys.PAGE_DOWN).perform()
             print("scrolled\n")
-            time.sleep(random.randint(1, 6))
+            time.sleep(random.randint(40, 65))
             actions.send_keys(Keys.PAGE_DOWN).perform()
         except Exception as e:
             print("Ad Was not found")
@@ -225,13 +226,48 @@ def visit_other_site_direct(o_browser):
         o_browser.quit()
 
 
-def load_cookies_from_file(file_path):
-    with open(file_path, 'r') as file:
-        m_cookies = json.load(file)
-    return m_cookies
-
-
 def run_browser():
+    numb = random.choice([0, 1])
+    print("Selected Choice: " + str(numb))
+    if numb == 0:
+        custom_ua = UserAgentManager().get_phone_user_agent()
+        print("Using Android Mobile: " + custom_ua)
+    else:
+        custom_ua = UserAgents().get_user_agent()
+        print("Using PC / iOS: " + custom_ua)
+
+    s_proxy = ProxyManager().get_proxy()
+    print(f'Using Proxy: {s_proxy}')
+
+    chrome_options = Options()
+    chrome_options.add_argument(f"user-agent={custom_ua}")
+    chrome_options.add_argument(f"--proxy-server=socks5://{s_proxy}")
+    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
+                               options=chrome_options)
+    browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
+    try:
+        # choice to visit other site
+        random_num = random.randint(1, 5)
+        if random_num <= 4:
+            """now visit other site"""
+            print("Visiting other site")
+            google_random = random.randint(1, 4)
+            if google_random <= 4:
+                visit_site_with_google(browser)
+            else:
+                visit_other_site_direct(browser)
+
+        else:
+            """go direct to target"""
+            visit_site_direct(browser, random.randint(1, 3))
+
+    except Exception as e:
+        print("Error occurred. Retrying")
+        traceback.print_exc()
+        browser.quit()
+
+
+'''def run_browser():
     global RUNS
     RUNS += 1
     if RUNS > MAX_RUNS:
@@ -257,48 +293,7 @@ def run_browser():
     chrome_options.add_argument(f"--proxy-server=socks5://{s_proxy}")
     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),
                                options=chrome_options)
-    browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080))
-    try:
-        print("Connecting to dev tools protocol")
-        browser.execute_cdp_cmd('Network.enable', {})
-        # Define multiple cookies
-        cookies = load_cookies_from_file("zcookies.json")
-        print("Cookies Loaded from file.")
-
-        if len(cookies) > 0:
-            print("Getting 100 unique cookies..")
-            unique_cookies = random.sample(cookies, min(len(cookies), random.randint(50, 150)))
-            # Set multiple cookies
-            print("Adding Cookies")
-            for unique_cookie in unique_cookies:
-                browser.execute_cdp_cmd('Network.setCookie', unique_cookie)
-            print("Cookies Added!.")
-        else:
-            print("Cookies Less Than 100")
-    except Exception as e1:
-        print("Error in cookie function")
-        traceback.print_exc()
-    try:
-        # choice to visit other site
-        random_num = random.randint(1, 5)
-        if random_num <= 4:
-            """now visit other site"""
-            print("Visiting other site")
-            google_random = random.randint(1, 4)
-            if google_random <= 4:
-                visit_site_with_google(browser)
-            else:
-                visit_other_site_direct(browser)
-
-        else:
-            """go direct to target"""
-            visit_site_direct(browser, random.randint(1, 3))
-
-    except Exception as e:
-        print("Error occurred. Retrying")
-        traceback.print_exc()
-        browser.quit()
-
+    browser.set_window_size(random.randint(900, 2000), random.randint(900, 1080)) '''
 
 RUNS = 0
 MAX_RUNS = ClickProxyManager().get_proxy_length()

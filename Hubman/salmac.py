@@ -48,9 +48,10 @@ def click_ad(m_browser):
             print("div not found")
 
         try:
-            element_to_click = WebDriverWait(m_browser, 40).until(
+            element_to_click = WebDriverWait(m_browser, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "#epad .adsbygoogle")))
-
+            actions.scroll_to_element(element_to_click).perform()
+            print("Scrolled to ad")
             actions.move_to_element(element_to_click).perform()
             print("moved to ad")
             time.sleep(1)
@@ -59,30 +60,37 @@ def click_ad(m_browser):
             actions.move_by_offset(x_offset, y_offset).perform()
             actions.click().perform()
             print("clicked")
+
+            wt = random.randint(40, 72)
             print("\nwaiting page load before scroll\n")
-            time.sleep(random.randint(10, 15))
+            print(f'Waiting {wt}')
+            time.sleep(wt)
+
             actions.send_keys(Keys.PAGE_DOWN).perform()
             print("scrolled\n")
-            time.sleep(random.randint(1, 6))
+
+            wt2 = random.randint(45, 80)
+            print(f' Waiting {wt2}')
+            time.sleep(wt2)
             actions.send_keys(Keys.PAGE_DOWN).perform()
         except Exception as e:
             print("Ad Was not found")
             traceback.print_exc()
 
-        wait = random.randint(15, 45)
+        wait = random.randint(3, 10)
         print("waiting: " + str(wait))
         time.sleep(wait)
         m_browser.quit()
         print("====End Session====")
-        time.sleep(random.randint(2, 5))
+        time.sleep(1)
     else:
         print("Not to click this round")
-        wait = random.randint(25, 60)
+        wait = random.randint(2, 5)
         print("waiting: " + str(wait))
         time.sleep(wait)
         m_browser.quit()
         print("====End Session====")
-        time.sleep(random.randint(2, 5))
+        time.sleep(2)
 
     print("Session Ended")
 
