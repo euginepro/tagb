@@ -5,6 +5,7 @@ import traceback
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+from gimme.gimme_links import GimmeLinkManager
 from eurofutbol.lugamovies_proxies import LugaMoviesProxyManager
 from selenium_stealth import stealth
 import requests
@@ -63,7 +64,7 @@ def click_ad(m_browser):
     print(f"Current tabs: {len(current_handles)}")
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 20
+    ctr = 200
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
