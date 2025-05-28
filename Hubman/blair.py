@@ -64,7 +64,7 @@ def click_ad(m_browser):
     print(f"Current tabs: {len(current_handles)}")
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 200
+    ctr = 20
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
