@@ -1,0 +1,7 @@
+__pycache__/
+proxy_data/
+/Hubman/downloaded_files/
+chromedriver.exe
+Hubman/chrome/*
+!Hubman/chrome/info.txt
+

@@ -1,0 +1,2 @@
+chrome: https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.69/win64/chrome-win64.zip
+driver: https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.69/win64/chromedriver-win64.zip
