@@ -4,15 +4,15 @@ import undetected_chromedriver as uc
 import traceback
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+from eurofutbol.lugamovies_proxies import LugaMoviesProxyManager
 from selenium_stealth import stealth
 import requests
 from requests import Timeout, RequestException
 from socks import ProxyError
 import socket
 
-from eurofutbol.links import LinkManager
 from utils.proxy_timezone import ProxyUtils
-from eurofutbol.proxies import ProxyManager
 from link_rand import Rand
 from eurofutbol.link_router import Router
 from utils.user_agents import UserAgents
@@ -27,6 +27,7 @@ def loop():
         try:
             run_browser()
         except Exception as e:
+            #traceback.print_exc()
             time.sleep(1)
 
 
@@ -62,7 +63,7 @@ def click_ad(m_browser):
     print(f"Current tabs: {len(current_handles)}")
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 25
+    ctr = 20
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
@@ -241,7 +242,7 @@ def visit_site_direct(d_browser, page_views):
     try:
         print("=====session start ..direct visit=====")
 
-        d_browser.get(LinkManager().get_link())
+        d_browser.get(GimmeLinkManager().get_link())
         print("waiting 5s")
         time.sleep(5)
 
@@ -376,7 +377,7 @@ def visit_other_site_direct(o_browser, visits):
 
 
 def run_browser():
-    s_proxy = ProxyManager().get_proxy()
+    s_proxy = LugaMoviesProxyManager().get_proxy()
     pturl = "http://www.google.com"
     proxy = s_proxy
     proxies = {
@@ -526,7 +527,7 @@ def run_browser():
     service = ch_service(executable_path="chrome_driver/chromedriver.exe")
 
     print('Init wd')
-    browser = uc.Chrome(options=chrome_options, service=service)
+    browser = uc.Chrome(options=chrome_options, service=service, driver_executable_path="chrome_driver/chromedriver.exe")
     print('ok')
 
     if tizone:
