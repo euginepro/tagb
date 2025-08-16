@@ -1,25 +1,25 @@
 import random
 
-from data.attorney import AttorneyLinks
-from data.claim import ClaimLinks
-from data.classes import ClassLinks
-from data.conference_call import ConferenceCallLinks
-from data.credit import CreditLinks
-from data.degree import DegreeLinks
-from data.donate import DonateLinks
-from data.electricity import ElectricityLinks
-from data.hosting import HostingLinks
-from data.insurance import InsuranceLinks
-from data.lawyer import LawyerLinks
-from data.loans import LoansLinks
-from data.mortgage import MortgageLinks
-from data.recovery import RecoveryLinks
-from data.rehab import RehabLinks
-from data.software import SoftwareLinks
-from data.trading import TradingLinks
-from data.transfer import TransferLinks
-from data.treatment import TreatmentLinks
-from data.high_profile import HighLinks
+from .data.claim import ClaimLinks
+from .data.classes import ClassLinks
+from .data.conference_call import ConferenceCallLinks
+from .data.credit import CreditLinks
+from .data.degree import DegreeLinks
+from .data.donate import DonateLinks
+from .data.electricity import ElectricityLinks
+from .data.high_profile import HighLinks
+from .data.hosting import HostingLinks
+from .data.insurance import InsuranceLinks
+from .data.lawyer import LawyerLinks
+from .data.loans import LoansLinks
+from .data.mortgage import MortgageLinks
+from .data.recovery import RecoveryLinks
+from .data.rehab import RehabLinks
+from .data.software import SoftwareLinks
+from .data.trading import TradingLinks
+from .data.transfer import TransferLinks
+from .data.treatment import TreatmentLinks
+from .data.attorney import AttorneyLinks
 
 
 class Rand:

@@ -5,19 +5,19 @@ import traceback
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from gimme.gimme_links import GimmeLinkManager
-from eurofutbol.lugamovies_proxies import LugaMoviesProxyManager
-from selenium_stealth import stealth
+from Hubman.modules.gimme import GimmeLinkManager
+from Hubman.modules.eurofutbol.lugamovies_proxies import LugaMoviesProxyManager
+from Hubman.modules.selenium_stealth import stealth
 import requests
 from requests import Timeout, RequestException
 from socks import ProxyError
 import socket
 
-from utils.proxy_timezone import ProxyUtils
+from Hubman.modules.utils import ProxyUtils
 from link_rand import Rand
-from eurofutbol.link_router import Router
-from utils.user_agents import UserAgents
-from utils.android_user_agents import UserAgentManager
+from Hubman.modules.eurofutbol.link_router import Router
+from Hubman.modules.utils import UserAgents
+from Hubman.modules.utils import UserAgentManager
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ChromeService as ch_service

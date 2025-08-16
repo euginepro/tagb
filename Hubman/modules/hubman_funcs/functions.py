@@ -1,40 +1,32 @@
-import json
 import random
-import socket
 import time
 import traceback
 
-import requests
-from requests import Timeout, RequestException
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.chrome.options import Options
-from selenium_stealth import stealth
-from socks import ProxyError
-from webdriver_manager.chrome import ChromeDriverManager
-
-from eurofutbol.data_proxies import DataProxyManager
-from utils.proxy_timezone import ProxyUtils
-from ep_movies.epcode_links import EpCodeLinkManager
-
-from link_rand import Rand
-from eurofutbol.link_router import Router
-from utils.user_agents import UserAgents
-from utils.android_user_agents import UserAgentManager
-
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from ..eurofutbol.link_router import Router
+from ..link_rand import Rand
 
-from selenium import webdriver
-
-
-def loop():
-    while True:
-        try:
-            run_browser()
-        except Exception as e:
-            time.sleep(1)
+SITE_LINKS_MANAGER = None
+def set_site_links_manager(manager):
+    global SITE_LINKS_MANAGER
+    SITE_LINKS_MANAGER = manager
+    
+def close_browser(driver):
+    try:
+        window_handles = driver.window_handles
+        print(f"Number of open windows: {len(window_handles)}")
+        for handle in window_handles:
+            driver.switch_to.window(handle)
+            time.sleep(2)
+            driver.close()
+        print("Closed All Windows")
+        driver.quit()
+    except Exception as e:
+        print(f'Error closing browser: {e}')
+        driver.quit()
 
 
 def get_last_opened_tab(driver, current_handles):
@@ -49,47 +41,16 @@ def get_last_opened_tab(driver, current_handles):
     return current_handles  # No new tab, return current list of handles
 
 
-def get_div():
-    ad_divs = ["epad", "headad", "bottom1", "bottom2", "bottom3", "posttop", "postbottom", "sidea", "sideb"]
-    return random.choice(ad_divs)
-
-
-def get_iframe(div):
-    if div == "epad":
-        return "google_ads_iframe_/23158947121/cepad_0"
-    elif div == "headad":
-        return "google_ads_iframe_/23158947121/cheader_0"
-    elif div == "bottom1":
-        return "google_ads_iframe_/23158947121/cbottom1_0"
-    elif div == "bottom2":
-        return "google_ads_iframe_/23158947121/cbottom2_0"
-    elif div == "bottom3":
-        return "google_ads_iframe_/23158947121/cbottom3_0"
-    elif div == "sidea":
-        return "google_ads_iframe_/23158947121/csidea_0"
-    elif div == "sideb":
-        return "google_ads_iframe_/23158947121/csideB_0"
-    elif div == "posttop":
-        return "google_ads_iframe_/23158947121/cposttop_0"
-    elif div == "postbottom":
-        return "google_ads_iframe_/23158947121/cpostbottom_0"
-    else:
-        print("Unknown div provided.")
-
-
 def click_ad(m_browser):
     current_handles = m_browser.window_handles
     print(f"Current tabs: {len(current_handles)}")
     ad_random = random.randint(1, 100)
     """Using CTR 8%"""
-    ctr = 15
-    ad_div = get_div()
-    print(f'Using div: {ad_div}')
-    ad_iframe = get_iframe(ad_div)
+    ctr = 0 #not clicking
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
-            div = WebDriverWait(m_browser, 15).until(EC.presence_of_element_located((By.ID, ad_div)))
+            div = WebDriverWait(m_browser, 15).until(EC.presence_of_element_located((By.ID, "epad")))
             print("div found")
             actions.scroll_to_element(div).perform()
             print("Scrolled to div")
@@ -100,11 +61,10 @@ def click_ad(m_browser):
 
         try:
             element_to_click = WebDriverWait(m_browser, 10).until(
-                EC.presence_of_element_located((By.ID, ad_iframe))
+                EC.presence_of_element_located((By.CSS_SELECTOR, "#epad .adsbygoogle"))
             )
 
-            print(f"Iframe exists: id -> {ad_iframe}")
-
+            print("Ad exists")
             actions.scroll_to_element(element_to_click).perform()
             print("Scrolled to ad")
             actions.move_to_element(element_to_click).perform()
@@ -244,7 +204,7 @@ def click_ad(m_browser):
         wait = random.randint(1, 5)
         print("waiting: " + str(wait))
         time.sleep(wait)
-        m_browser.quit()
+        close_browser(m_browser)
         print("====End Session====")
         time.sleep(1)
     else:
@@ -252,7 +212,7 @@ def click_ad(m_browser):
         wait = random.randint(2, 5)
         print("waiting: " + str(wait))
         time.sleep(wait)
-        m_browser.quit()
+        close_browser(m_browser)
         print("====End Session====")
         time.sleep(2)
 
@@ -265,7 +225,7 @@ def visit_site_direct(d_browser, page_views):
     try:
         print("=====session start ..direct visit=====")
 
-        d_browser.get(EpCodeLinkManager().get_link())
+        d_browser.get(SITE_LINKS_MANAGER.get_link())
         print("waiting 5s")
         time.sleep(5)
 
@@ -274,7 +234,7 @@ def visit_site_direct(d_browser, page_views):
         while not got and runs < 20:
             try:
                 consent_ok = d_browser.find_element(By.XPATH,
-                                                    f"/html/body/div[{runs}]/div[2]/div[1]/div[3]/div[2]/button[1]")
+                                                    f"/html/body/div[{runs}]/div[2]/div[2]/div[3]/div[2]/button[1]")
                 if consent_ok is not None:
                     got = True
                     consent_ok.click()
@@ -326,12 +286,12 @@ def visit_site_direct(d_browser, page_views):
         except Exception as e:
             print("Error occurred. Retrying")
             traceback.print_exc()
-            d_browser.quit()
+            close_browser(d_browser)
 
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
-        d_browser.quit()
+        close_browser(d_browser)
 
 
 def visit_site_with_google(g_browser):
@@ -373,7 +333,7 @@ def visit_site_with_google(g_browser):
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
-        g_browser.quit()
+        close_browser(g_browser)
 
 
 def visit_other_site_direct(o_browser, visits):
@@ -396,229 +356,4 @@ def visit_other_site_direct(o_browser, visits):
     except Exception as e:
         print("Error occurred. Retrying")
         traceback.print_exc()
-        o_browser.quit()
-
-
-def run_browser():
-    s_proxy = DataProxyManager().get_proxy()
-    pturl = "http://www.google.com"
-    proxy = s_proxy
-    proxies = {
-        "http": f"socks5://{proxy}",
-        "https": f"socks5://{proxy}",
-    }
-    print(f"Check: {proxy}")
-    try:
-        response = requests.get(pturl, proxies=proxies, timeout=10)  # Increased timeout
-        if response.status_code == 200:
-            print("OK...\n\n")
-
-    except (ProxyError, Timeout, socket.error, RequestException) as e:
-        print("Dead===")
-        raise Exception("Proxy Not Ok..")
-
-    print(f'Using Proxy: {s_proxy}')
-
-    '''
-    0. Linux
-    1, 9. Android
-    2, 10. iOS device
-    3, 4, 5. Win
-    6, 7, 8. Mac
-
-    int os_id
-    '''
-    # My Vars
-    is_phone = False
-    android_ua_mgr = UserAgentManager()
-    ua_mgr = UserAgents()
-
-    linux_ua = ua_mgr.get_linux_user_agent()
-    android_ua = android_ua_mgr.get_phone_user_agent()
-    ios_ua = ua_mgr.get_iPhone_user_agent()
-    mac_ua = ua_mgr.get_mac_user_agent()
-    win_ua = ua_mgr.get_windows_user_agent()
-
-    os_id = random.randint(0, 10)
-
-    # init
-    n_platform = ''
-    n_user_agent = ''
-    n_appVersion = n_user_agent.replace('Mozilla/', '')
-    n_vendor = ''
-    s_renderer = ''
-    s_webgl = ''
-
-    if os_id == 0:
-        # Linux
-        linux_wg_vendors = ['NVIDIA Corporation', 'Intel', 'AMD']
-        linux_wg_renderers = ['NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2', 'Intel(R) HD Graphics 630', 'AMD Radeon RX 570']
-        n_platform = 'Linux x86_64'
-        n_user_agent = linux_ua
-        n_appVersion = n_user_agent.replace('Mozilla/', '')
-        n_vendor = 'Google Inc.'
-        s_webgl = random.choice(linux_wg_vendors)
-        s_renderer = linux_wg_renderers[linux_wg_vendors.index(s_webgl)]
-        print(f'Using Linux: {linux_ua}')
-    elif os_id == 1 or os_id == 9:
-        # Android'
-        is_phone = True
-        android_wgv = ['Qualcomm', 'ARM Imagination', 'Technologies']
-        android_wgr = ['Adreno (TM) 630', 'Mali-G76 PowerVR', 'Rogue GE8320']
-        n_platform = random.choice(["Linux armv7l", "Linux armv8l", "Android"])
-        n_user_agent = android_ua
-        n_appVersion = n_user_agent.replace('Mozilla/', '')
-        n_vendor = 'Google Inc.'
-        s_webgl = random.choice(android_wgv)
-        s_renderer = android_wgr[android_wgv.index(s_webgl)]
-        print(f'Using Android: {android_ua}')
-    elif os_id == 2 or os_id == 10:
-        # iOS Device
-        is_phone = True
-        n_platform = random.choice(['iPhone', 'iPad', 'iPod'])
-        n_user_agent = ios_ua
-        n_appVersion = n_user_agent.replace('Mozilla/', '')
-        n_vendor = 'Apple Inc.'
-        s_webgl = 'Apple Inc.'
-        s_renderer = 'Apple Inc.'
-        print(f'Using iDevice: {ios_ua}')
-    elif os_id == 3 or os_id == 5 or os_id == 6:
-        # Win
-        win_wgv = ['Google Inc. (Intel)', 'NVIDIA Corporation', 'Intel', 'AMD']
-        win_wgr = ['ANGLE (Intel, Intel(R) HD Graphics 620 (0x00005916) Direct3D11 vs_5_0 ps_5_0, D3D11)',
-                   'NVIDIA GeForce GTX 1080/PCIe/SSE2', 'Intel(R) HD Graphics 620', 'AMD Radeon RX 580']
-        n_platform = random.choice(['Win32', 'Win64'])
-        n_user_agent = win_ua
-        n_appVersion = n_user_agent.replace('Mozilla/', '')
-        n_vendor = 'Google Inc.'
-        s_webgl = random.choice(win_wgv)
-        s_renderer = win_wgr[win_wgv.index(s_webgl)]
-        print(f'Using Win: {win_ua}')
-    else:
-        # Mac
-        mac_wgv = ['Apple Inc.', 'Intel', 'AMD']
-        mac_wgr = ['Apple Metal', 'Intel Iris Pro', 'AMD Radeon Pro 5500M']
-        n_platform = 'MacIntel'
-        n_user_agent = mac_ua
-        n_appVersion = n_user_agent.replace('Mozilla/', '')
-        n_vendor = 'Apple Inc.'
-        s_webgl = random.choice(mac_wgv)
-        s_renderer = mac_wgr[mac_wgv.index(s_webgl)]
-        print(f'Using Mac: {mac_ua}')
-
-    tizone = ProxyUtils().get_timezone_from_proxy(proxy)
-    print(f'Got TimeZone: {tizone}')
-
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument(f"--proxy-server=socks5://{proxy}")
-    chrome_options.add_argument(f'--user-agent={n_user_agent}')
-    chrome_options.add_argument("--disable-popup-blocking")
-    # Disable WebDriver flags
-    chrome_options.add_argument('--disable-blink-features=AutomationControlled')
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--ignore-certificate-errors")
-    chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    chrome_options.add_experimental_option("useAutomationExtension", False)
-    chrome_options.add_argument("--no-sandbox")
-
-    # partially disable webrtc
-    preferences = {
-        "webrtc.ip_handling_policy": "disable_non_proxied_udp",
-        "webrtc.multiple_routes_enabled": False,
-        "webrtc.nonproxied_udp_enabled": False
-    }
-    chrome_options.add_experimental_option("prefs", preferences)
-
-    width = random.randint(900, 2000)
-    height = random.randint(900, 1080)
-    if is_phone:
-        print("====== Using mobile Device ======")
-        dimens = [[375, 800], [415, 800], [375, 667], [414, 896], [390, 844], [430, 932],
-                  [412, 915], [360, 740], [412, 915], [768, 1024], [820, 1180], [1024, 1366],
-                  [912, 1368], [540, 720], [344, 882], [853, 1280], [412, 914], [1024, 600], [1280, 800]]
-
-        index = random.randint(0, len(dimens) - 1)
-        width = dimens[index][0]
-        print(f"Width: {width}")
-        height = dimens[index][1]
-        print(f"Height: {height}")
-        pixel_ratio = random.choice([1.0, 2.0, 3.0])
-        platform = n_platform
-        arch = ''
-        mobile_emulation = {
-            "userAgent": n_user_agent,
-            "deviceMetrics": {
-                "mobile": True,
-                "touch": True,
-                "width": width,
-                "height": height,
-                "pixelRatio": pixel_ratio
-            },
-            "clientHints": {
-                "platform": platform,
-                "architecture": arch,
-                "mobile": True,
-                "wow64": False
-            }
-        }
-        chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-
-    print('Init wd')
-    browser = webdriver.Chrome(options=chrome_options)
-    print('ok')
-
-    if tizone:
-        tz_params = {'timezoneId': tizone}
-        browser.execute_cdp_cmd('Emulation.setTimezoneOverride', tz_params)
-        print(f'Set TimeZone: {tizone}')
-
-    browser.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
-        'source': f"""
-                Object.defineProperty(navigator, 'platform', {{
-                    get: () => '{n_platform}',
-                }});
-                Object.defineProperty(navigator, 'appVersion', {{
-                    get: () => '{n_appVersion}',
-                }});
-                Object.defineProperty(navigator, 'vendor', {{
-                    get: () => '{n_vendor}',
-                }});
-            """
-    })
-    stealth(browser,
-            languages=["en-US", "en"],
-            vendor=n_vendor,
-            platform=n_platform,
-            webgl_vendor=s_webgl,
-            renderer=s_renderer,
-            fix_hairline=True,
-            )
-
-    browser.set_window_size(width, height)
-    
-    try:
-        # choice to visit other site
-        random_num = random.randint(1, 5)
-        if random_num <= 4:
-            """now visit other site"""
-            print("Visiting other site")
-            google_random = random.randint(1, 4)
-            if google_random <= 4:
-                visit_site_with_google(browser)
-            else:
-                visit_other_site_direct(browser, random.randint(1, 2))
-
-        else:
-            """go direct to target"""
-            visit_site_direct(browser, random.randint(1, 3))
-
-    except Exception as e:
-        print("Error occurred. Retrying")
-        traceback.print_exc()
-        browser.quit()
-    finally:
-        browser.quit()
-        print("Ended Finally.")
-
-
-loop()
+        close_browser(o_browser)

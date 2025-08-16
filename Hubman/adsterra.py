@@ -1,4 +1,3 @@
-import json
 import random
 import socket
 import time
@@ -6,20 +5,17 @@ import traceback
 import requests
 from requests import Timeout, RequestException
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.chrome.options import Options
-from selenium_stealth import stealth
+from Hubman.modules.selenium_stealth import stealth
 from socks import ProxyError
 
-from utils.proxy_timezone import ProxyUtils
-from eurofutbol.data_proxies import DataProxyManager
-from ep_movies.et_blog_links import EugineTechBlogLinkManager
-from eurofutbol.proxies import ProxyManager
+from Hubman.modules.utils import ProxyUtils
+from Hubman.modules.ep_movies import EugineTechBlogLinkManager
+from Hubman.modules.eurofutbol.proxies import ProxyManager
 from link_rand import Rand
-from eurofutbol.link_router import Router
-from utils.user_agents import UserAgents
-from utils.android_user_agents import UserAgentManager
+from Hubman.modules.eurofutbol.link_router import Router
+from Hubman.modules.utils import UserAgents
+from Hubman.modules.utils import UserAgentManager
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium import webdriver
