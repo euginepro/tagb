@@ -381,6 +381,7 @@ def run_browser():
 
     set_custom_headers(browser, http_headers)
     browser.set_window_size(width, height)
+    browser.set_window_position(random.randint(5, 500), random.randint(1, 100))
 
     try:
         # choice to visit other site
