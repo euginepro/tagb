@@ -51,7 +51,6 @@ def set_custom_headers(browser, headers):
 def run_browser():
     print("++++Run Browser+++++")
     s_proxy = LugaMoviesProxyManager().get_proxy()
-    s_proxy = "74.81.81.81:824"
     pturl = "http://www.google.com"
     proxy = s_proxy
     proxies = {
@@ -281,7 +280,7 @@ def run_browser():
     print(f'Got TimeZone: {tizone}')
 
     chrome_options = uc.ChromeOptions()
-    #chrome_options.add_argument(f"--proxy-server=socks5://{proxy}")
+    chrome_options.add_argument(f"--proxy-server=socks5://{proxy}")
     chrome_options.add_argument(f'--user-agent={n_user_agent}')
     chrome_options.add_argument("--disable-popup-blocking")
     # Disable WebDriver flags
@@ -381,7 +380,9 @@ def run_browser():
             fix_hairline=True,
             )
 
+    set_custom_headers(browser, http_headers)
     browser.set_window_size(width, height)
+
     try:
         # choice to visit other site
         random_num = random.randint(1, 5)
