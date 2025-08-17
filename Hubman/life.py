@@ -31,7 +31,7 @@ def loop():
         try:
             run_browser()
         except Exception as e:
-            traceback.print_exc()
+            # traceback.print_exc()
             time.sleep(1)
 
 def set_custom_headers(browser, headers):
@@ -123,8 +123,6 @@ def run_browser():
             'sec-ch-ua-bitness': '"64"',
             'sec-ch-ua-model': '""',
             'sec-ch-ua-full-version-list': f'"Chromium";v="{browser_full_ver}", "Google Chrome";v="{browser_full_ver}", "{grease_brand}";v="{browser_full_ver}"',
-            'upgrade-insecure-requests': '1',
-            'dnt': '1',
             'sec-fetch-site': 'none',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-user': '?1',
@@ -158,8 +156,6 @@ def run_browser():
             'sec-ch-ua-bitness': '"64"',
             'sec-ch-ua-model': f'"{phone_model}"',
             'sec-ch-ua-full-version-list': f'"Chromium";v="{full_browser_ver}", "Google Chrome";v="{full_browser_ver}", "{grease_brand}";v="{full_browser_ver}"',
-            'upgrade-insecure-requests': '1',
-            'dnt': '1',
             'sec-fetch-site': 'none',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-user': '?1',
@@ -191,8 +187,6 @@ def run_browser():
             'sec-ch-ua-platform': '"iOS"',
             'sec-ch-ua-platform-version': f'"{ios_version}"',
             'sec-ch-ua-model': f'"{device_model}"',
-            'upgrade-insecure-requests': '1',
-            'dnt': '1',
             'sec-fetch-site': 'none',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-user': '?1',
@@ -230,8 +224,6 @@ def run_browser():
             'sec-ch-ua-bitness': '"64"',
             'sec-ch-ua-model': '""',
             'sec-ch-ua-full-version-list': f'"{grease_brand}";v="{full_browser_ver}", "Chromium";v="{full_browser_ver}", "Google Chrome";v="{full_browser_ver}"',
-            'upgrade-insecure-requests': '1',
-            'dnt': '1',
             'sec-fetch-site': 'none',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-user': '?1',
@@ -267,8 +259,6 @@ def run_browser():
             'sec-ch-ua-bitness': '"64"',
             'sec-ch-ua-model': '""',
             'sec-ch-ua-full-version-list': f'"{grease_brand}";v="{full_browser_ver}", "Chromium";v="{full_browser_ver}", "Google Chrome";v="{full_browser_ver}"',
-            'upgrade-insecure-requests': '1',
-            'dnt': '1',
             'sec-fetch-site': 'none',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-user': '?1',
@@ -382,6 +372,7 @@ def run_browser():
 
     set_custom_headers(browser, http_headers)
     browser.set_window_size(width, height)
+    browser.set_window_position(random.randint(5, 500), random.randint(1, 100))
 
     try:
         # choice to visit other site
@@ -410,4 +401,5 @@ def run_browser():
 
 print("Program Start")
 set_site_links_manager(LifeLinkManager())
+set_ctr(15)
 loop()

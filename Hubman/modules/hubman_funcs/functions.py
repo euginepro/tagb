@@ -10,9 +10,15 @@ from ..eurofutbol.link_router import Router
 from ..link_rand import Rand
 
 SITE_LINKS_MANAGER = None
+AD_CLICK_CTR = 0
+
 def set_site_links_manager(manager):
     global SITE_LINKS_MANAGER
     SITE_LINKS_MANAGER = manager
+
+def set_ctr(ctr):
+    global AD_CLICK_CTR
+    AD_CLICK_CTR = ctr
     
 def close_browser(driver):
     try:
@@ -45,8 +51,8 @@ def click_ad(m_browser):
     current_handles = m_browser.window_handles
     print(f"Current tabs: {len(current_handles)}")
     ad_random = random.randint(1, 100)
-    """Using CTR 8%"""
-    ctr = 0 #not clicking
+    print(f"Using CTR {AD_CLICK_CTR}")
+    ctr = AD_CLICK_CTR
     if ad_random <= ctr:
         actions = ActionChains(m_browser)
         try:
@@ -56,150 +62,150 @@ def click_ad(m_browser):
             print("Scrolled to div")
             actions.move_to_element(div).perform()
             print("Moved to div")
+            try:
+                element_to_click = WebDriverWait(m_browser, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "#epad .adsbygoogle"))
+                )
+
+                print("Ad exists")
+                actions.scroll_to_element(element_to_click).perform()
+                print("Scrolled to ad")
+                actions.move_to_element(element_to_click).perform()
+                print("moved to ad")
+                time.sleep(1)
+                x_offset = random.randint(5, 15)
+                y_offset = random.randint(5, 15)
+                actions.move_by_offset(x_offset, y_offset).perform()
+                actions.click().perform()
+                print("clicked")
+
+                print('Sleep: 1')
+                time.sleep(1)
+
+                print('\nCheck For New Tab')
+                current_handles = get_last_opened_tab(m_browser, current_handles)
+
+                print('Sleep: 2')
+                time.sleep(2)
+
+                print("Waiting 1 to 4s")
+                time.sleep(random.randint(1, 4))
+                actions.send_keys(Keys.PAGE_DOWN).perform()
+                print("Scrolled")
+
+                """Slowly scroll to bottom of ad landing page"""
+                page_finished = False
+                scroll_times = 0
+                while not page_finished:
+                    if not m_browser.execute_script(
+                            "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
+                        print("Still Scrolling Ad L Page")
+
+                        actions.send_keys(Keys.PAGE_DOWN).perform()
+                        scroll_times += 1
+                        sleep_time = random.randint(8, 18)
+                        print("Waiting " + str(sleep_time) + " Seconds after L page down")
+                        time.sleep(sleep_time)
+                        if scroll_times >= 10:
+                            page_finished = True
+                    else:
+                        page_finished = True
+                        print("Scrolled To Bottom Of Ad L Page")
+                """Scroll Back to top"""
+                actions.send_keys(Keys.HOME).perform()
+
+                print("waiting 1 to 3 seconds")
+                time.sleep(random.randint(1, 3))
+
+                print('can wait 10s')
+                wait = WebDriverWait(m_browser, 10)
+                try:
+                    links = wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, 'a')))
+                    if links:
+                        print(f"{len(links)} links found.")
+                        time.sleep(2)
+                        link_tries = 0
+                        while link_tries < 5:
+                            try:
+                                link_tries += 1
+                                random_link = random.choice(links)
+                                print(f'Random Link Chosen: {link_tries}')
+                                actions.scroll_to_element(random_link).perform()
+                                print('Scrolled to link')
+                                actions.move_to_element(random_link).perform()
+                                print('Moved to link')
+                                actions.click(random_link).perform()
+                                print('Link Clicked')
+                                break
+                            except Exception as e:
+                                # Exception Ignored
+                                print('Error With Chosen Link')
+
+                        print('Check if there is a new tab')
+                        current_handles = get_last_opened_tab(m_browser, current_handles)
+                        print('Engage with Loaded Page..')
+                        print('\nSleep: 1 to 4')
+                        time.sleep(random.randint(1, 4))
+                        actions.send_keys(Keys.PAGE_DOWN).perform()
+                        wt2 = random.randint(1, 10)
+                        print(f' Waiting {wt2} before scroll')
+                        time.sleep(wt2)
+                        actions.send_keys(Keys.PAGE_DOWN).perform()
+                        print('Scrolled')
+
+                        third_page_random = random.randint(0, 5)
+                        if third_page_random > 3:
+                            print('Engaging third page')
+                            try:
+                                links = wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, 'a')))
+                                if links:
+                                    print(f"{len(links)} links found on third page.")
+                                    time.sleep(2)
+                                    link_tries = 0
+                                    while link_tries < 5:
+                                        try:
+                                            link_tries += 1
+                                            random_link = random.choice(links)
+                                            print(f'P#3 Random Link Chosen: {link_tries}')
+                                            actions.scroll_to_element(random_link).perform()
+                                            print('P#3 Scrolled to link')
+                                            actions.move_to_element(random_link).perform()
+                                            print('P#3 Moved to link')
+                                            actions.click(random_link).perform()
+                                            print('P#3 Link Clicked')
+                                            break
+                                        except Exception as e:
+                                            # Exception Ignored
+                                            print('Error With Chosen Link')
+
+                                    print('Check if there is a new tab')
+                                    current_handles = get_last_opened_tab(m_browser, current_handles)
+                                    print('Engage with Loaded Page..')
+                                    print('\nSleep: 1 to 4')
+                                    time.sleep(random.randint(1, 4))
+                                    actions.send_keys(Keys.PAGE_DOWN).perform()
+                                    wt2 = random.randint(1, 10)
+                                    print(f' Waiting {wt2} before scroll')
+                                    time.sleep(wt2)
+                                    actions.send_keys(Keys.PAGE_DOWN).perform()
+                                    print('Scrolled')
+                                else:
+                                    print("No links found on the page.")
+                            except Exception as e:
+                                print("Error in third engagement")
+                                traceback.print_exc()
+
+                    else:
+                        print("No links found on the page.")
+                except Exception as e:
+                    print('Error Getting Links')
+                    traceback.print_exc()
+            except Exception as e:
+                print("Ad Was not found")
+                traceback.print_exc()
+
         except Exception as e:
             print("div not found")
-
-        try:
-            element_to_click = WebDriverWait(m_browser, 10).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "#epad .adsbygoogle"))
-            )
-
-            print("Ad exists")
-            actions.scroll_to_element(element_to_click).perform()
-            print("Scrolled to ad")
-            actions.move_to_element(element_to_click).perform()
-            print("moved to ad")
-            time.sleep(1)
-            x_offset = random.randint(5, 15)
-            y_offset = random.randint(5, 15)
-            actions.move_by_offset(x_offset, y_offset).perform()
-            actions.click().perform()
-            print("clicked")
-
-            print('Sleep: 1')
-            time.sleep(1)
-
-            print('\nCheck For New Tab')
-            current_handles = get_last_opened_tab(m_browser, current_handles)
-
-            print('Sleep: 2')
-            time.sleep(2)
-
-            print("Waiting 1 to 4s")
-            time.sleep(random.randint(1, 4))
-            actions.send_keys(Keys.PAGE_DOWN).perform()
-            print("Scrolled")
-
-            """Slowly scroll to bottom of ad landing page"""
-            page_finished = False
-            scroll_times = 0
-            while not page_finished:
-                if not m_browser.execute_script(
-                        "return (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 1000;"):
-                    print("Still Scrolling Ad L Page")
-
-                    actions.send_keys(Keys.PAGE_DOWN).perform()
-                    scroll_times += 1
-                    sleep_time = random.randint(8, 18)
-                    print("Waiting " + str(sleep_time) + " Seconds after L page down")
-                    time.sleep(sleep_time)
-                    if scroll_times >= 10:
-                        page_finished = True
-                else:
-                    page_finished = True
-                    print("Scrolled To Bottom Of Ad L Page")
-            """Scroll Back to top"""
-            actions.send_keys(Keys.HOME).perform()
-
-            print("waiting 1 to 3 seconds")
-            time.sleep(random.randint(1, 3))
-
-            print('can wait 10s')
-            wait = WebDriverWait(m_browser, 10)
-            try:
-                links = wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, 'a')))
-                if links:
-                    print(f"{len(links)} links found.")
-                    time.sleep(2)
-                    link_tries = 0
-                    while link_tries < 5:
-                        try:
-                            link_tries += 1
-                            random_link = random.choice(links)
-                            print(f'Random Link Chosen: {link_tries}')
-                            actions.scroll_to_element(random_link).perform()
-                            print('Scrolled to link')
-                            actions.move_to_element(random_link).perform()
-                            print('Moved to link')
-                            actions.click(random_link).perform()
-                            print('Link Clicked')
-                            break
-                        except Exception as e:
-                            # Exception Ignored
-                            print('Error With Chosen Link')
-
-                    print('Check if there is a new tab')
-                    current_handles = get_last_opened_tab(m_browser, current_handles)
-                    print('Engage with Loaded Page..')
-                    print('\nSleep: 1 to 4')
-                    time.sleep(random.randint(1, 4))
-                    actions.send_keys(Keys.PAGE_DOWN).perform()
-                    wt2 = random.randint(1, 10)
-                    print(f' Waiting {wt2} before scroll')
-                    time.sleep(wt2)
-                    actions.send_keys(Keys.PAGE_DOWN).perform()
-                    print('Scrolled')
-
-                    third_page_random = random.randint(0, 5)
-                    if third_page_random > 3:
-                        print('Engaging third page')
-                        try:
-                            links = wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, 'a')))
-                            if links:
-                                print(f"{len(links)} links found on third page.")
-                                time.sleep(2)
-                                link_tries = 0
-                                while link_tries < 5:
-                                    try:
-                                        link_tries += 1
-                                        random_link = random.choice(links)
-                                        print(f'P#3 Random Link Chosen: {link_tries}')
-                                        actions.scroll_to_element(random_link).perform()
-                                        print('P#3 Scrolled to link')
-                                        actions.move_to_element(random_link).perform()
-                                        print('P#3 Moved to link')
-                                        actions.click(random_link).perform()
-                                        print('P#3 Link Clicked')
-                                        break
-                                    except Exception as e:
-                                        # Exception Ignored
-                                        print('Error With Chosen Link')
-
-                                print('Check if there is a new tab')
-                                current_handles = get_last_opened_tab(m_browser, current_handles)
-                                print('Engage with Loaded Page..')
-                                print('\nSleep: 1 to 4')
-                                time.sleep(random.randint(1, 4))
-                                actions.send_keys(Keys.PAGE_DOWN).perform()
-                                wt2 = random.randint(1, 10)
-                                print(f' Waiting {wt2} before scroll')
-                                time.sleep(wt2)
-                                actions.send_keys(Keys.PAGE_DOWN).perform()
-                                print('Scrolled')
-                            else:
-                                print("No links found on the page.")
-                        except Exception as e:
-                            print("Error in third engagement")
-                            traceback.print_exc()
-
-                else:
-                    print("No links found on the page.")
-            except Exception as e:
-                print('Error Getting Links')
-                traceback.print_exc()
-        except Exception as e:
-            print("Ad Was not found")
-            traceback.print_exc()
 
         wait = random.randint(1, 5)
         print("waiting: " + str(wait))
