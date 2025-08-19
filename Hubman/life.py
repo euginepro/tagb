@@ -9,7 +9,6 @@ from modules.utils.iphone_names import IOSNameMgr
 import undetected_chromedriver as uc
 
 from modules.eurofutbol.lugamovies_proxies import LugaMoviesProxyManager
-from modules.selenium_stealth import stealth
 import requests
 from requests import Timeout, RequestException
 from socks import ProxyError
@@ -360,15 +359,8 @@ def run_browser():
     browser.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         "source": prevent_new_tabs_script
     })
-
-    stealth(browser,
-            languages=["en-US", "en"],
-            vendor=n_vendor,
-            platform=n_platform,
-            webgl_vendor=s_webgl,
-            renderer=s_renderer,
-            fix_hairline=True,
-            )
+    browser.execute_cdp_cmd('Network.setUserAgentOverride', {
+        "userAgent": n_user_agent})
 
     set_custom_headers(browser, http_headers)
     browser.set_window_size(width, height)
