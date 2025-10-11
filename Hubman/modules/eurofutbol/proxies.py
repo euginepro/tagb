@@ -12,7 +12,7 @@ class ProxyManager:
     def __init__(self, url=None, local_file='proxy_data/saved_proxies.txt',
                  last_updated_file='proxy_data/last_updated.txt',
                  refresh_interval=300):
-        self.url = url or "https://raw.githubusercontent.com/Saintjona/proxy/refs/heads/main/Proxy.txt"
+        self.url = url or "https://raw.githubusercontent.com/larrybender930/wbmov/refs/heads/main/p.txt"
         self.local_file = local_file
         self.last_updated_file = last_updated_file
         self.refresh_interval = refresh_interval
