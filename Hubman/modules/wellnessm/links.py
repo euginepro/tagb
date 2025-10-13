@@ -3,6 +3,27 @@ import random
 
 class WellnessmLinkManager:
     def __init__(self):
+        self.pages = ["https://www.wellnessblossom.life/p/top-hollywood-talent-agencies-how-to.html",
+                      "https://www.wellnessblossom.life/p/the-complete-guide-to-film-licensing.html",
+                      "https://www.wellnessblossom.life/p/10-proven-ways-to-secure-independent.html",
+                      "https://www.wellnessblossom.life/p/understanding-film-distribution-rights.html",
+                      "https://www.wellnessblossom.life/p/how-to-start-your-own-movie-production.html",
+                      "https://www.wellnessblossom.life/p/the-best-film-editing-software-for.html",
+                      "https://www.wellnessblossom.life/p/movie-marketing-services-explained.html",
+                      "https://www.wellnessblossom.life/p/why-film-production-insurance-is.html",
+                      "https://www.wellnessblossom.life/p/how-to-find-and-apply-to-casting-calls.html",
+                      "https://www.wellnessblossom.life/p/how-professional-movie-script-writing.html",
+                      "https://www.wellnessblossom.life/p/movie-trailer-production-services-how.html",
+                      "https://www.wellnessblossom.life/p/film-production-equipment-rental-save.html",
+                      "https://www.wellnessblossom.life/p/planning-perfect-movie-premiere-tips.html",
+                      "https://www.wellnessblossom.life/p/film-rights-acquisition-101-how-to.html",
+                      "https://www.wellnessblossom.life/p/everything-you-need-to-know-about-movie.html",
+                      "https://www.wellnessblossom.life/p/mastering-film-festival-submissions.html",
+                      "https://www.wellnessblossom.life/p/top-movie-distribution-platforms-where.html",
+                      "https://www.wellnessblossom.life/p/film-sound-design-services-creating.html",
+                      "https://www.wellnessblossom.life/p/behind-scenes-how-movie-set.html",
+                      "https://www.wellnessblossom.life/p/the-ultimate-guide-to-film-location.html"]
+
         self.links = ["https://www.wellnessblossom.life", "https://www.wellnessblossom.life",
                       "https://www.wellnessblossom.life", "https://www.wellnessblossom.life",
                       "https://www.wellnessblossom.life", "https://www.wellnessblossom.life",
@@ -6857,4 +6878,5 @@ class WellnessmLinkManager:
                       ]
 
     def get_link(self):
-        return random.choice(self.links)
+        choice = random.randint(1, 10)
+        return random.choice(self.pages) if choice < 8 else random.choice(self.links)
